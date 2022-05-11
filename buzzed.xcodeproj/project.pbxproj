@@ -92,6 +92,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F205318D282BCF0E00C3E27B /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F24E5552282AACE600C19429 /* LeaderboardViewController.swift */,
+				F24E5550282AACD800C19429 /* GamePlayerViewController.swift */,
+				F24E554E282AACD000C19429 /* LobbyPlayerViewController.swift */,
+				F24E554C282AACB000C19429 /* HostListViewController.swift */,
+				F24E554A282AACA100C19429 /* GameHostViewController.swift */,
+				F24E5548282AAC9400C19429 /* LobbyHostViewController.swift */,
+				F24E5546282AAC1800C19429 /* HomeViewController.swift */,
+				F24E5599282AC27B00C19429 /* TimeLabelController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
 		F23CFBDD2823A8BD00A7E195 = {
 			isa = PBXGroup;
 			children = (
@@ -115,17 +130,10 @@
 		F23CFBE82823A8BD00A7E195 /* buzzed */ = {
 			isa = PBXGroup;
 			children = (
+				F205318D282BCF0E00C3E27B /* controllers */,
 				F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */,
 				F23CFBEB2823A8BD00A7E195 /* SceneDelegate.swift */,
 				F23CFBEF2823A8BD00A7E195 /* Main.storyboard */,
-				F24E5552282AACE600C19429 /* LeaderboardViewController.swift */,
-				F24E5550282AACD800C19429 /* GamePlayerViewController.swift */,
-				F24E554E282AACD000C19429 /* LobbyPlayerViewController.swift */,
-				F24E554C282AACB000C19429 /* HostListViewController.swift */,
-				F24E554A282AACA100C19429 /* GameHostViewController.swift */,
-				F24E5548282AAC9400C19429 /* LobbyHostViewController.swift */,
-				F24E5546282AAC1800C19429 /* HomeViewController.swift */,
-				F24E5599282AC27B00C19429 /* TimeLabelController.swift */,
 				F23CFBF52823A8BE00A7E195 /* Assets.xcassets */,
 				F23CFBF72823A8BE00A7E195 /* LaunchScreen.storyboard */,
 				F23CFBFA2823A8BE00A7E195 /* Info.plist */,
