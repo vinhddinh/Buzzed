@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F23CFBEA2823A8BD00A7E195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */; };
 		F23CFBEC2823A8BD00A7E195 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFBEB2823A8BD00A7E195 /* SceneDelegate.swift */; };
-		F23CFBEE2823A8BD00A7E195 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFBED2823A8BD00A7E195 /* ViewController.swift */; };
 		F23CFBF12823A8BD00A7E195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23CFBEF2823A8BD00A7E195 /* Main.storyboard */; };
 		F23CFBF42823A8BD00A7E195 /* buzzed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F23CFBF22823A8BD00A7E195 /* buzzed.xcdatamodeld */; };
 		F23CFBF62823A8BE00A7E195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23CFBF52823A8BE00A7E195 /* Assets.xcassets */; };
@@ -17,6 +16,14 @@
 		F23CFC042823A8BE00A7E195 /* buzzedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFC032823A8BE00A7E195 /* buzzedTests.swift */; };
 		F23CFC0E2823A8BE00A7E195 /* buzzedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFC0D2823A8BE00A7E195 /* buzzedUITests.swift */; };
 		F23CFC102823A8BE00A7E195 /* buzzedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFC0F2823A8BE00A7E195 /* buzzedUITestsLaunchTests.swift */; };
+		F24E5547282AAC1800C19429 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5546282AAC1800C19429 /* HomeViewController.swift */; };
+		F24E5549282AAC9400C19429 /* LobbyHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5548282AAC9400C19429 /* LobbyHostViewController.swift */; };
+		F24E554B282AACA100C19429 /* GameHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E554A282AACA100C19429 /* GameHostViewController.swift */; };
+		F24E554D282AACB000C19429 /* HostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E554C282AACB000C19429 /* HostListViewController.swift */; };
+		F24E554F282AACD000C19429 /* LobbyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E554E282AACD000C19429 /* LobbyPlayerViewController.swift */; };
+		F24E5551282AACD800C19429 /* GamePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5550282AACD800C19429 /* GamePlayerViewController.swift */; };
+		F24E5553282AACE600C19429 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5552282AACE600C19429 /* LeaderboardViewController.swift */; };
+		F24E559A282AC27B00C19429 /* TimeLabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5599282AC27B00C19429 /* TimeLabelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +47,6 @@
 		F23CFBE62823A8BD00A7E195 /* buzzed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buzzed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F23CFBEB2823A8BD00A7E195 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F23CFBED2823A8BD00A7E195 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F23CFBF02823A8BD00A7E195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F23CFBF32823A8BD00A7E195 /* buzzed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = buzzed.xcdatamodel; sourceTree = "<group>"; };
 		F23CFBF52823A8BE00A7E195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +57,14 @@
 		F23CFC092823A8BE00A7E195 /* buzzedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buzzedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23CFC0D2823A8BE00A7E195 /* buzzedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buzzedUITests.swift; sourceTree = "<group>"; };
 		F23CFC0F2823A8BE00A7E195 /* buzzedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buzzedUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F24E5546282AAC1800C19429 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F24E5548282AAC9400C19429 /* LobbyHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyHostViewController.swift; sourceTree = "<group>"; };
+		F24E554A282AACA100C19429 /* GameHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHostViewController.swift; sourceTree = "<group>"; };
+		F24E554C282AACB000C19429 /* HostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostListViewController.swift; sourceTree = "<group>"; };
+		F24E554E282AACD000C19429 /* LobbyPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyPlayerViewController.swift; sourceTree = "<group>"; };
+		F24E5550282AACD800C19429 /* GamePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerViewController.swift; sourceTree = "<group>"; };
+		F24E5552282AACE600C19429 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		F24E5599282AC27B00C19429 /* TimeLabelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLabelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +92,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F205318D282BCF0E00C3E27B /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F24E5552282AACE600C19429 /* LeaderboardViewController.swift */,
+				F24E5550282AACD800C19429 /* GamePlayerViewController.swift */,
+				F24E554E282AACD000C19429 /* LobbyPlayerViewController.swift */,
+				F24E554C282AACB000C19429 /* HostListViewController.swift */,
+				F24E554A282AACA100C19429 /* GameHostViewController.swift */,
+				F24E5548282AAC9400C19429 /* LobbyHostViewController.swift */,
+				F24E5546282AAC1800C19429 /* HomeViewController.swift */,
+				F24E5599282AC27B00C19429 /* TimeLabelController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
 		F23CFBDD2823A8BD00A7E195 = {
 			isa = PBXGroup;
 			children = (
@@ -101,9 +130,9 @@
 		F23CFBE82823A8BD00A7E195 /* buzzed */ = {
 			isa = PBXGroup;
 			children = (
+				F205318D282BCF0E00C3E27B /* controllers */,
 				F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */,
 				F23CFBEB2823A8BD00A7E195 /* SceneDelegate.swift */,
-				F23CFBED2823A8BD00A7E195 /* ViewController.swift */,
 				F23CFBEF2823A8BD00A7E195 /* Main.storyboard */,
 				F23CFBF52823A8BE00A7E195 /* Assets.xcassets */,
 				F23CFBF72823A8BE00A7E195 /* LaunchScreen.storyboard */,
@@ -261,10 +290,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F23CFBEE2823A8BD00A7E195 /* ViewController.swift in Sources */,
+				F24E5551282AACD800C19429 /* GamePlayerViewController.swift in Sources */,
 				F23CFBEA2823A8BD00A7E195 /* AppDelegate.swift in Sources */,
+				F24E5553282AACE600C19429 /* LeaderboardViewController.swift in Sources */,
+				F24E554D282AACB000C19429 /* HostListViewController.swift in Sources */,
 				F23CFBEC2823A8BD00A7E195 /* SceneDelegate.swift in Sources */,
+				F24E554B282AACA100C19429 /* GameHostViewController.swift in Sources */,
+				F24E5549282AAC9400C19429 /* LobbyHostViewController.swift in Sources */,
 				F23CFBF42823A8BD00A7E195 /* buzzed.xcdatamodeld in Sources */,
+				F24E559A282AC27B00C19429 /* TimeLabelController.swift in Sources */,
+				F24E554F282AACD000C19429 /* LobbyPlayerViewController.swift in Sources */,
+				F24E5547282AAC1800C19429 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
