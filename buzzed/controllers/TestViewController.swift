@@ -46,17 +46,23 @@ class TestViewController : UITableViewController, MCSessionDelegate, MCBrowserVi
       mcSession.delegate = self
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.mcAdvertiserAssistant.stop()
+    }
+    
     @IBAction func buttonPressed(_ sender: UIButton) {
-      let ac = UIAlertController(title: "Connect to others", message: nil, preferredStyle: .alert)
+        let ac = UIAlertController(title: "Connect to others", message: nil, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Host a session", style: .default) { (UIAlertAction) in
             self.mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType:  "testBuzzed", discoveryInfo: nil, session: self.mcSession)
             self.mcAdvertiserAssistant.start()
-           })
-      ac.addAction(UIAlertAction(title: "Join a session", style: .default) { (UIAlertAction) in
-          let mcBrowser = MCBrowserViewController(serviceType: "testBuzzed", session: self.mcSession)
-          mcBrowser.delegate = self
-          self.present(mcBrowser, animated: true, completion: nil)
-         })
-      ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-      present(ac, animated: true)
+        })
+        ac.addAction(UIAlertAction(title: "Join a session", style: .default) { (UIAlertAction) in
+            let mcBrowser = MCBrowserViewController(serviceType: "testBuzzed", session: self.mcSession)
+            mcBrowser.delegate = self
+            self.present(mcBrowser, animated: true, completion: nil)
+        })
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(ac, animated: true)
     }}
+
+    
