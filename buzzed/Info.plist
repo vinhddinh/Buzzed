@@ -4,8 +4,8 @@
 <dict>
 	<key>NSBonjourServices</key>
 	<array>
-		<string>_testBuzzed._udp</string>
-		<string>_testBuzzed._tcp</string>
+		<string>_edpandan.Buzzed._udp</string>
+		<string>_edpandan.Buzzed._tcp</string>
 	</array>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Used to discover devices around you</string>

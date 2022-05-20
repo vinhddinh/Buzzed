@@ -53,11 +53,11 @@ class TestViewController : UITableViewController, MCSessionDelegate, MCBrowserVi
     @IBAction func buttonPressed(_ sender: UIButton) {
         let ac = UIAlertController(title: "Connect to others", message: nil, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Host a session", style: .default) { (UIAlertAction) in
-            self.mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType:  "testBuzzed", discoveryInfo: nil, session: self.mcSession)
+            self.mcAdvertiserAssistant = MCAdvertiserAssistant(serviceType:  "edpandan.Buzzed", discoveryInfo: nil, session: self.mcSession)
             self.mcAdvertiserAssistant.start()
         })
         ac.addAction(UIAlertAction(title: "Join a session", style: .default) { (UIAlertAction) in
-            let mcBrowser = MCBrowserViewController(serviceType: "testBuzzed", session: self.mcSession)
+            let mcBrowser = MCBrowserViewController(serviceType: "edpandan.Buzzed", session: self.mcSession)
             mcBrowser.delegate = self
             self.present(mcBrowser, animated: true, completion: nil)
         })
