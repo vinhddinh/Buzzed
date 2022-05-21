@@ -25,7 +25,6 @@
 		F24E5553282AACE600C19429 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5552282AACE600C19429 /* LeaderboardViewController.swift */; };
 		F24E559A282AC27B00C19429 /* TimeLabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5599282AC27B00C19429 /* TimeLabelController.swift */; };
 		F864024428375F3200400D02 /* MPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F864024328375F3200400D02 /* MPCHandler.swift */; };
-		F88FF339282C11C300DBDD42 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88FF338282C11C300DBDD42 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +67,6 @@
 		F24E5552282AACE600C19429 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		F24E5599282AC27B00C19429 /* TimeLabelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLabelController.swift; sourceTree = "<group>"; };
 		F864024328375F3200400D02 /* MPCHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCHandler.swift; sourceTree = "<group>"; };
-		F88FF338282C11C300DBDD42 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +105,6 @@
 				F24E5548282AAC9400C19429 /* LobbyHostViewController.swift */,
 				F24E5546282AAC1800C19429 /* HomeViewController.swift */,
 				F24E5599282AC27B00C19429 /* TimeLabelController.swift */,
-				F88FF338282C11C300DBDD42 /* TestViewController.swift */,
 				F864024328375F3200400D02 /* MPCHandler.swift */,
 			);
 			path = controllers;
@@ -307,7 +304,6 @@
 				F864024428375F3200400D02 /* MPCHandler.swift in Sources */,
 				F24E559A282AC27B00C19429 /* TimeLabelController.swift in Sources */,
 				F24E554F282AACD000C19429 /* LobbyPlayerViewController.swift in Sources */,
-				F88FF339282C11C300DBDD42 /* TestViewController.swift in Sources */,
 				F24E5547282AAC1800C19429 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
