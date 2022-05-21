@@ -294,6 +294,9 @@
                         <viewLayoutGuide key="safeArea" id="G1Z-7N-rSI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="browserTable" destination="Xdo-hu-v8Z" id="FJl-AF-bwB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ce9-iv-vge" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
