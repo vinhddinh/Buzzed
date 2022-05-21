@@ -67,7 +67,6 @@
     }
     
     func session(_ session: MCSession, didReceiveCertificate certificate: [Any]?, fromPeer peerID: MCPeerID, certificateHandler: @escaping (Bool) -> Void) {
-        
         return certificateHandler(true)
     }
     

@@ -35,8 +35,9 @@ class GameHostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        mpcHandler.setupPeerWithDisplayName(displayName: UIDevice.current.name)
+        mpcHandler.setupSession()
+        mpcHandler.advertiseSelf(advertise: true)
     }
     
 
