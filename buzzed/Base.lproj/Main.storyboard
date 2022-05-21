@@ -231,6 +231,7 @@
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="gray" title="Confirm"/>
                             <connections>
+                                <action selector="confirmButtonPressed:" destination="BJB-en-12a" eventType="touchUpInside" id="QpN-64-B96"/>
                                 <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="currentContext" id="5gg-Qb-plF"/>
                             </connections>
                         </button>

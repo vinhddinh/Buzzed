@@ -36,7 +36,7 @@
     }
     
     func setupBrowser() {
-        browser = MCBrowserViewController(serviceType: "edpandan.Buzzed", session: session)
+        browser = MCBrowserViewController(serviceType: "Buzzed", session: session)
     }
     
     func advertiseSelf(advertise: Bool) {
@@ -45,7 +45,7 @@
             advertiser = nil
             return
         }
-        advertiser = MCAdvertiserAssistant(serviceType: "edpandan.Buzzed", discoveryInfo: nil, session: session)
+        advertiser = MCAdvertiserAssistant(serviceType: "Buzzed", discoveryInfo: nil, session: session)
         advertiser?.start()
     }
     

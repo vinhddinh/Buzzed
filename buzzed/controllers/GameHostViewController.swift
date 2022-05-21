@@ -20,6 +20,11 @@ class GameHostViewController: UIViewController {
         animateIn(view: confirmEndView);
     }
     
+    @IBAction func confirmButtonPressed(_ sender: UIButton) {
+        mpcHandler.advertiser?.stop()
+    }
+    
+    
     //Animates in blurred background
     func animateIn(view: UIView){
         let background = self.view!
@@ -39,7 +44,6 @@ class GameHostViewController: UIViewController {
         mpcHandler.setupSession()
         mpcHandler.advertiseSelf(advertise: true)
     }
-    
 
     /*
     // MARK: - Navigation

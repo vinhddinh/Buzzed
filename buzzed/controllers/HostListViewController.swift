@@ -11,8 +11,9 @@ class HostListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        mpcHandler.setupPeerWithDisplayName(displayName: UIDevice.current.name)
+        mpcHandler.setupBrowser()
+        self.present(mpcHandler.browser, animated: true, completion: nil)
     }
     
 
