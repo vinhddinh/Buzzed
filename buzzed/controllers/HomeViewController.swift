@@ -19,7 +19,6 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("appeared!")
         setupConnectivity()
     }
     

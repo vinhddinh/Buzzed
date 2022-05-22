@@ -28,6 +28,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="HOST"/>
                                 <connections>
+                                    <action selector="hostButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nxs-Di-h3i"/>
                                     <segue destination="BJB-en-12a" kind="presentation" id="95m-ch-9Mi"/>
                                 </connections>
                             </button>

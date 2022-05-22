@@ -30,7 +30,7 @@ import MultipeerConnectivity
     }
     
     func setupBrowser() {
-        browser = MCBrowserViewController(serviceType: "Buzzed", session: session)
+        browser = MCBrowserViewController(serviceType: "buzzed", session: session)
     }
     
     func advertiseSelf(advertise: Bool) {
@@ -39,7 +39,7 @@ import MultipeerConnectivity
             advertiser = nil
             return
         }
-        advertiser = MCAdvertiserAssistant(serviceType: "Buzzed", discoveryInfo: nil, session: session)
+        advertiser = MCAdvertiserAssistant(serviceType: "buzzed", discoveryInfo: nil, session: session)
         advertiser?.start()
     }
     
