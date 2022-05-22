@@ -32,8 +32,27 @@ class GamePlayerViewController: HandlerViewController {
         }
     }
     
+    @IBOutlet weak var scoreLabel: UILabel!
     override func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         print("Player received message: " + String(data: data, encoding: .utf8)!)
+        
+        let decoder = JSONDecoder()
+        do {
+            var players = try decoder.decode([String: Int].self, from: data)
+            
+            for player in players {
+                print("This is: " + UIDevice.current.name + ", Compared: " + player.key)
+                if player.key == UIDevice.current.name {
+                    print("Yo, what? It worked!")
+                    scoreLabel.text = "Your score: " + String(player.value)
+                }
+            }
+        }
+        catch let error as NSError {
+            // Handle error
+            print(error.localizedDescription)
+        }
+        
         if let serverMessage = String(data: data, encoding: .utf8) {
             DispatchQueue.main.async { [unowned self] in
                 if (serverMessage == "LOCKBUZZERS")
