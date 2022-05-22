@@ -1,5 +1,5 @@
 //
-//  GamePlayerViewController.swift
+//  LobbyHostViewController.swift
 //  buzzed
 //
 //  Created by Danielle Alota on 11/5/22.
@@ -7,15 +7,21 @@
 
 import UIKit
 
-class GamePlayerViewController: UIViewController {
+class LobbyHostViewController: UIViewController {
 
+    @IBOutlet weak var roomNameLabel: UILabel!
+    @IBOutlet weak var timeLimitSlider: UISlider!
+    @IBOutlet weak var timeLimitLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        roomNameLabel.text = UIDevice.current.name; //grabs the device's name
 
         // Do any additional setup after loading the view.
     }
     
-
+    
+  
     /*
     // MARK: - Navigation
 
