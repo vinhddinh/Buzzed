@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF080EE7283A7B6300353A5C /* images in Resources */ = {isa = PBXBuildFile; fileRef = CF080EE6283A7B6300353A5C /* images */; };
 		F23CFBEA2823A8BD00A7E195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */; };
 		F23CFBF12823A8BD00A7E195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23CFBEF2823A8BD00A7E195 /* Main.storyboard */; };
 		F23CFBF62823A8BE00A7E195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23CFBF52823A8BE00A7E195 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF080EE6283A7B6300353A5C /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		F23CFBE62823A8BD00A7E195 /* buzzed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buzzed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F23CFBF02823A8BD00A7E195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		F23CFBE82823A8BD00A7E195 /* buzzed */ = {
 			isa = PBXGroup;
 			children = (
+				CF080EE6283A7B6300353A5C /* images */,
 				F2E720F9283A562800014145 /* model */,
 				F205318D282BCF0E00C3E27B /* controllers */,
 				F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */,
@@ -268,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF080EE7283A7B6300353A5C /* images in Resources */,
 				F23CFBF92823A8BE00A7E195 /* LaunchScreen.storyboard in Resources */,
 				F23CFBF62823A8BE00A7E195 /* Assets.xcassets in Resources */,
 				F23CFBF12823A8BD00A7E195 /* Main.storyboard in Resources */,
@@ -483,7 +487,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A2F946564B;
+				DEVELOPMENT_TEAM = D8C9X39YWL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = buzzed/Info.plist;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Used to discover devices around you";
@@ -497,7 +501,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.dani.buzzed;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.dani.buzzededed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -512,7 +516,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A2F946564B;
+				DEVELOPMENT_TEAM = D8C9X39YWL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = buzzed/Info.plist;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Used to discover devices around you";
@@ -526,7 +530,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.dani.buzzed;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.dani.buzzededed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

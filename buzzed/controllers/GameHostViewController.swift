@@ -9,7 +9,59 @@ import UIKit
 import CoreData
 import MultipeerConnectivity
 
+<<<<<<< HEAD
 class GameHostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+=======
+class GameHostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MCBrowserViewControllerDelegate, MCSessionDelegate {
+    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
+        
+    }
+    
+    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
+        
+    }
+    
+    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        
+    }
+    
+    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+        
+    }
+    
+    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+        
+    }
+    
+    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
+        
+    }
+    
+    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        print("Host received message")
+        if let playerName = String(data: data, encoding: .utf8) {
+            DispatchQueue.main.async { [unowned self] in
+                if (playerName != "LOCKBUZZERS")
+                {
+                    // TODO: Identify player with name playerName as having buzzed in first
+                    print("Host received buzz")
+
+                    // Tell all players to lock their buzzers
+                    if mcSession.connectedPeers.count > 0 {
+                        do {
+                            // Broadcast message for players to lock buzzers
+                            try mcSession.send(Data("LOCKBUZZERS".utf8), toPeers: mcSession.connectedPeers, with: .reliable)
+                            print("Host sent lock message to peers")
+                        } catch let error as NSError {
+                            // Handle error
+                            print(error.localizedDescription);
+                        }
+                    }
+                }
+            }
+        }
+    }
+>>>>>>> button-do-thing
     
     @IBOutlet var confirmEndView: UIView!
     @IBOutlet var blurView: UIVisualEffectView!
@@ -144,7 +196,22 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
         } catch {
             
         }
+<<<<<<< HEAD
         self.fetchPlayers()
+=======
+        
+        // TODO: Probably delete this...
+        // Tell all players to unlock their buzzers
+        if mcSession.connectedPeers.count > 0 {
+            do {
+                // Broadcast message for players to lock buzzers
+                try mcSession.send(Data("RESETBUZZERS".utf8), toPeers: mcSession.connectedPeers, with: .reliable)
+            } catch let error as NSError {
+                // Handle error
+                print(error.localizedDescription);
+            }
+        }
+>>>>>>> button-do-thing
     }
     
     
