@@ -10,6 +10,12 @@ import CoreData
 import MultipeerConnectivity
 
 class GameHostViewController: HandlerViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet var confirmEndView: UIView!
+    @IBOutlet var blurView: UIVisualEffectView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var roomNameLabel: UILabel!
+    
     override func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         print("Host received message: " + String(data: data, encoding: .utf8)!)
         if let playerName = String(data: data, encoding: .utf8) {
@@ -34,11 +40,7 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
             }
         }
     }
-    
-    @IBOutlet var confirmEndView: UIView!
-    @IBOutlet var blurView: UIVisualEffectView!
-    @IBOutlet weak var tableView: UITableView!
-    var playerName: String = ""
+
     //    var playerIndex: Int = 0
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -113,7 +115,6 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
         let newPlayer = PlayerMO(context: self.context)
         newPlayer.deviceName = name
         newPlayer.pointsScored = 0
-        print("bruuh \(players?.count)")
 
         //save object
         do{
@@ -153,25 +154,13 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         mpcHandler.currentView? = self
+        roomNameLabel.text = "Host: \(UIDevice.current.name)"
     }
     
     
     //For testing purposes, this currently deletes all player data.
     //For deployment, this should reset all points to 0
     @IBAction func resetButtonPressed(_ sender: Any) {
-//        let request = PlayerMO.fetchRequest() as NSFetchRequest<PlayerMO>
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//
-//        do{
-//            if let result = try? context.fetch(request){
-//                for player in result {
-//                    context.delete(player)
-//                }
-//            }
-//            try context.save()
-//        } catch {
-//
-//        }
         self.fetchPlayers()
         // TODO: Probably delete this...
         // Tell all players to unlock their buzzers

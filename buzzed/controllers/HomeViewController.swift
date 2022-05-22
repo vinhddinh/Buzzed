@@ -7,6 +7,7 @@
 
 import UIKit
 import MultipeerConnectivity
+import CoreData
 
 
 class HomeViewController: UIViewController, MCBrowserViewControllerDelegate {
@@ -28,6 +29,19 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate {
     
     
     @IBAction func hostButtonPressed(_ sender: Any) {
+        let request = PlayerMO.fetchRequest() as NSFetchRequest<PlayerMO>
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do{
+            if let result = try? context.fetch(request){
+                for player in result {
+                    context.delete(player)
+                }
+            }
+            try context.save()
+        } catch {
+            
+        }
         mpcHandler.advertiseSelf(advertise: true)
     }
     

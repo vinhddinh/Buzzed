@@ -11,6 +11,7 @@ import MultipeerConnectivity
 class GamePlayerViewController: HandlerViewController {
     var buzzed: Bool = false
     
+    @IBOutlet weak var roomNameLabel: UILabel!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var buttonImage: UIImageView!
     @IBAction func buttonDown(_ sender: Any) {
@@ -74,6 +75,7 @@ class GamePlayerViewController: HandlerViewController {
         // Do any additional setup after loading the view.
         button.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         mpcHandler.currentView = self
+        roomNameLabel.text = "Host: \(mpcHandler.session.connectedPeers[0].displayName)"
     }
     
 
