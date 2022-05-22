@@ -105,14 +105,18 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func testPopulateButtonPressed(_ sender: Any) {
+        print(players?.count)
+
         self.fetchPlayers()
     }
 
     func createPlayer(name: String){
+        print("Creating new player.")
         let newPlayer = PlayerMO(context: self.context)
         newPlayer.deviceName = name
         newPlayer.pointsScored = 0
-        
+        print("bruuh \(players?.count)")
+
         //save object
         do{
             try self.context.save()
@@ -157,19 +161,19 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
     //For testing purposes, this currently deletes all player data.
     //For deployment, this should reset all points to 0
     @IBAction func resetButtonPressed(_ sender: Any) {
-        let request = PlayerMO.fetchRequest() as NSFetchRequest<PlayerMO>
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        do{
-            if let result = try? context.fetch(request){
-                for player in result {
-                    context.delete(player)
-                }
-            }
-            try context.save()
-        } catch {
-            
-        }
+//        let request = PlayerMO.fetchRequest() as NSFetchRequest<PlayerMO>
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//
+//        do{
+//            if let result = try? context.fetch(request){
+//                for player in result {
+//                    context.delete(player)
+//                }
+//            }
+//            try context.save()
+//        } catch {
+//
+//        }
         self.fetchPlayers()
         // TODO: Probably delete this...
         // Tell all players to unlock their buzzers
