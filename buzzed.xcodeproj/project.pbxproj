@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F23CFBEA2823A8BD00A7E195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */; };
 		F23CFBF12823A8BD00A7E195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23CFBEF2823A8BD00A7E195 /* Main.storyboard */; };
+		F23CFBF42823A8BD00A7E195 /* buzzed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F23CFBF22823A8BD00A7E195 /* buzzed.xcdatamodeld */; };
 		F23CFBF62823A8BE00A7E195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23CFBF52823A8BE00A7E195 /* Assets.xcassets */; };
 		F23CFBF92823A8BE00A7E195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23CFBF72823A8BE00A7E195 /* LaunchScreen.storyboard */; };
 		F23CFC042823A8BE00A7E195 /* buzzedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFC032823A8BE00A7E195 /* buzzedTests.swift */; };
@@ -17,14 +18,6 @@
 		F24E5547282AAC1800C19429 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5546282AAC1800C19429 /* HomeViewController.swift */; };
 		F24E554B282AACA100C19429 /* GameHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E554A282AACA100C19429 /* GameHostViewController.swift */; };
 		F24E5551282AACD800C19429 /* GamePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5550282AACD800C19429 /* GamePlayerViewController.swift */; };
-<<<<<<< HEAD
-		F24E5553282AACE600C19429 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5552282AACE600C19429 /* LeaderboardViewController.swift */; };
-		F24E559A282AC27B00C19429 /* TimeLabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5599282AC27B00C19429 /* TimeLabelController.swift */; };
-		F2E720EE283A028E00014145 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E720ED283A028E00014145 /* CustomTableViewCell.swift */; };
-		F2E720F0283A046D00014145 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E720EF283A046D00014145 /* Player.swift */; };
-		F2E720F8283A0FF200014145 /* BuzzedPlayers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2E720F6283A0FF200014145 /* BuzzedPlayers.xcdatamodeld */; };
-=======
->>>>>>> UC-101
 		F864024428375F3200400D02 /* MPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F864024328375F3200400D02 /* MPCHandler.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +42,7 @@
 		F23CFBE62823A8BD00A7E195 /* buzzed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buzzed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F23CFBF02823A8BD00A7E195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F23CFBF32823A8BD00A7E195 /* buzzed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = buzzed.xcdatamodel; sourceTree = "<group>"; };
 		F23CFBF52823A8BE00A7E195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F23CFBF82823A8BE00A7E195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F23CFBFA2823A8BE00A7E195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,14 +54,6 @@
 		F24E5546282AAC1800C19429 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F24E554A282AACA100C19429 /* GameHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHostViewController.swift; sourceTree = "<group>"; };
 		F24E5550282AACD800C19429 /* GamePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerViewController.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		F24E5552282AACE600C19429 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
-		F24E5599282AC27B00C19429 /* TimeLabelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLabelController.swift; sourceTree = "<group>"; };
-		F2E720ED283A028E00014145 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		F2E720EF283A046D00014145 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		F2E720F7283A0FF200014145 /* BuzzedPlayers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuzzedPlayers.xcdatamodel; sourceTree = "<group>"; };
-=======
->>>>>>> UC-101
 		F864024328375F3200400D02 /* MPCHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,10 +88,6 @@
 				F24E5550282AACD800C19429 /* GamePlayerViewController.swift */,
 				F24E554A282AACA100C19429 /* GameHostViewController.swift */,
 				F24E5546282AAC1800C19429 /* HomeViewController.swift */,
-<<<<<<< HEAD
-				F24E5599282AC27B00C19429 /* TimeLabelController.swift */,
-=======
->>>>>>> UC-101
 				F864024328375F3200400D02 /* MPCHandler.swift */,
 			);
 			path = controllers;
@@ -137,11 +119,10 @@
 				F205318D282BCF0E00C3E27B /* controllers */,
 				F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */,
 				F23CFBEF2823A8BD00A7E195 /* Main.storyboard */,
-				F2E720ED283A028E00014145 /* CustomTableViewCell.swift */,
 				F23CFBF52823A8BE00A7E195 /* Assets.xcassets */,
 				F23CFBF72823A8BE00A7E195 /* LaunchScreen.storyboard */,
 				F23CFBFA2823A8BE00A7E195 /* Info.plist */,
-				F2E720EF283A046D00014145 /* Player.swift */,
+				F23CFBF22823A8BD00A7E195 /* buzzed.xcdatamodeld */,
 			);
 			path = buzzed;
 			sourceTree = "<group>";
@@ -159,7 +140,6 @@
 			children = (
 				F23CFC0D2823A8BE00A7E195 /* buzzedUITests.swift */,
 				F23CFC0F2823A8BE00A7E195 /* buzzedUITestsLaunchTests.swift */,
-				F2E720F6283A0FF200014145 /* BuzzedPlayers.xcdatamodeld */,
 			);
 			path = buzzedUITests;
 			sourceTree = "<group>";
@@ -295,26 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2E720F8283A0FF200014145 /* BuzzedPlayers.xcdatamodeld in Sources */,
 				F24E5551282AACD800C19429 /* GamePlayerViewController.swift in Sources */,
 				F23CFBEA2823A8BD00A7E195 /* AppDelegate.swift in Sources */,
-<<<<<<< HEAD
-				F24E5553282AACE600C19429 /* LeaderboardViewController.swift in Sources */,
-				F24E554D282AACB000C19429 /* HostListViewController.swift in Sources */,
-				F2E720F0283A046D00014145 /* Player.swift in Sources */,
-				F23CFBEC2823A8BD00A7E195 /* SceneDelegate.swift in Sources */,
-				F24E554B282AACA100C19429 /* GameHostViewController.swift in Sources */,
-				F24E5549282AAC9400C19429 /* LobbyHostViewController.swift in Sources */,
-				F864024428375F3200400D02 /* MPCHandler.swift in Sources */,
-				F24E559A282AC27B00C19429 /* TimeLabelController.swift in Sources */,
-				F24E554F282AACD000C19429 /* LobbyPlayerViewController.swift in Sources */,
-=======
 				F24E554B282AACA100C19429 /* GameHostViewController.swift in Sources */,
 				F23CFBF42823A8BD00A7E195 /* buzzed.xcdatamodeld in Sources */,
 				F864024428375F3200400D02 /* MPCHandler.swift in Sources */,
->>>>>>> UC-101
 				F24E5547282AAC1800C19429 /* HomeViewController.swift in Sources */,
-				F2E720EE283A028E00014145 /* CustomTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,13 +628,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F2E720F6283A0FF200014145 /* BuzzedPlayers.xcdatamodeld */ = {
+		F23CFBF22823A8BD00A7E195 /* buzzed.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F2E720F7283A0FF200014145 /* BuzzedPlayers.xcdatamodel */,
+				F23CFBF32823A8BD00A7E195 /* buzzed.xcdatamodel */,
 			);
-			currentVersion = F2E720F7283A0FF200014145 /* BuzzedPlayers.xcdatamodel */;
-			path = BuzzedPlayers.xcdatamodeld;
+			currentVersion = F23CFBF32823A8BD00A7E195 /* buzzed.xcdatamodel */;
+			path = buzzed.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

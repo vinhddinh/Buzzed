@@ -6,101 +6,13 @@
 //
 
 import UIKit
-<<<<<<< HEAD
-import CoreData
-
-class GameHostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-=======
 import MultipeerConnectivity
 
 class GameHostViewController: UIViewController{
->>>>>>> UC-101
     
     @IBOutlet var confirmEndView: UIView!
     @IBOutlet var blurView: UIVisualEffectView!
-    @IBOutlet weak var tableView: UITableView!
-//    var playerIndex: Int = 0
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var players:[PlayerMO]? //player managed object
-
-    //Height of each cell
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let count = players?.count {
-            return count
-        }
-        return 1
-//        return players?.count
-        //must change to number of players connected
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomTableViewCell
-        let player = self.players?[indexPath.row]
-        
-        cell.deviceNameLabel?.text = player?.deviceName
-        if let points = player?.pointsScored {
-            cell.pointsLabel?.text = String(points)
-        }
-        cell.addButton.tag = indexPath.row //TODO: point system adding
-        cell.addButton.addTarget(self, action: #selector(rowWasTapped(sender:)), for: .touchUpInside)
-//        figures out what row the button was tapped in
-        return cell
-    }
-
-    @objc
-    func rowWasTapped(sender: UIButton){
-        let rowIndex: Int = sender.tag
-        let playerSelected = self.players?[rowIndex]
-        if let name = playerSelected?.deviceName{
-            print(name)
-        }
-        playerSelected?.pointsScored += 1
-        print(playerSelected?.pointsScored)
-        self.fetchPlayers()
-    }
-    
-    /***************
-     Core Data Functions
-     ************************/
-    func fetchPlayers(){
-        do{
-            let request = PlayerMO.fetchRequest() as NSFetchRequest<PlayerMO>
-            let sortByScore = NSSortDescriptor(key: "pointsScored", ascending: false)
-            request.sortDescriptors = [sortByScore]
-
-            self.players = try context.fetch(request)
-            DispatchQueue.main.async {
-                if let tableview = self.tableView{
-                    tableview.reloadData()
-                }
-            }
-        } catch {
-            print("Error in fetching players")
-        }
-    }
-    
-    @IBAction func testPopulateButtonPressed(_ sender: Any) {
-        let newPlayer = PlayerMO(context: self.context)
-        newPlayer.deviceName = "Banana"
-        newPlayer.pointsScored = 0
-        
-        //save object
-        do{
-            try self.context.save()
-        } catch {
-            print("Error in saving player object")
-        }
-        
-        //refresh the tableview
-        self.fetchPlayers()
-    }
-    
-    /* UI Functions */
     //Spawns in confirmEndView
     @IBAction func endGameButtonPressed(_ sender: Any) {
         confirmEndView.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width * 0.9, height: self.view.bounds.height * 0.5) //width is 90% screen and height is 50% height
@@ -110,16 +22,10 @@ class GameHostViewController: UIViewController{
     }
     
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
-<<<<<<< HEAD
-        mpcHandler.advertiser?.stop()
-    }
-    
-=======
 //        mpcHandler.advertiser?.stop()
     }
     
     
->>>>>>> UC-101
     //Animates in blurred background
     func animateIn(view: UIView){
         let background = self.view!
@@ -135,36 +41,9 @@ class GameHostViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-        mpcHandler.setupPeerWithDisplayName(displayName: UIDevice.current.name)
-        mpcHandler.setupSession()
-        mpcHandler.advertiseSelf(advertise: true)
-    }
-
-    
-    //For testing purposes, this currently deletes all player data.
-    //For deployment, this should reset all points to 0
-    @IBAction func resetButtonPressed(_ sender: Any) {
-                let request = PlayerMO.fetchRequest() as NSFetchRequest<PlayerMO>
-                let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-                do{
-                    if let result = try? context.fetch(request){
-                        for player in result {
-                            context.delete(player)
-                        }
-                    }
-                    try context.save()
-                } catch {
-        
-                }
-    }
-    
-=======
         
     }
 
->>>>>>> UC-101
     /*
     // MARK: - Navigation
 

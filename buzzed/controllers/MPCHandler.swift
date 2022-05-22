@@ -8,21 +8,12 @@
  import UIKit
  import MultipeerConnectivity
  
-<<<<<<< HEAD
- var mpcHandler = MPCHandler.handler
- 
- class MPCHandler: NSObject {
-    
-    static var handler = MPCHandler()
-    var peerID: MCPeerID!
-=======
 // var mpcHandler = MPCHandler.handler
  
  class MPCHandler: NSObject {
     
     var handler = MPCHandler()
     let peerID = MCPeerID (displayName: UIDevice.current.name)
->>>>>>> UC-101
     var session: MCSession!
     var browser: MCBrowserViewController!
     var advertiser: MCAdvertiserAssistant?
@@ -30,17 +21,7 @@
     
     override init() {
         super.init()
-<<<<<<< HEAD
-        setupPeerWithDisplayName(displayName: UIDevice.current.name)
         setupSession()
-        advertiseSelf(advertise: true)
-    }
-    
-    func setupPeerWithDisplayName(displayName: String) {
-        peerID = MCPeerID(displayName: displayName)
-=======
-        setupSession()
->>>>>>> UC-101
     }
     
     func setupSession() {
@@ -74,12 +55,9 @@
  extension MPCHandler: MCSessionDelegate {
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-<<<<<<< HEAD
-=======
         if (state == MCSessionState.connected) {
             print("Connected")
         }
->>>>>>> UC-101
         DispatchQueue.main.async {
             self.delegate?.changed(state: state, of: peerID)
         }
