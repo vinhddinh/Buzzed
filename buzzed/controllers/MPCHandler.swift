@@ -7,12 +7,14 @@
  
 import UIKit
 import MultipeerConnectivity
+
  
 var mpcHandler = MPCHandler.handler
 //session is mpcHandler.session
  class MPCHandler: NSObject {
     
     static var handler = MPCHandler()
+     let gameHostVC = GameHostViewController()
     let peerID = MCPeerID (displayName: UIDevice.current.name)
     var session: MCSession!
     var browser: MCBrowserViewController!
@@ -60,7 +62,8 @@ var mpcHandler = MPCHandler.handler
         switch(state){
         case MCSessionState.connected:
             print("Connected: \(peerID.displayName)")
-        
+            gameHostVC.createPlayer(name: peerID.displayName) //y u no create player
+            gameHostVC.fetchPlayers() //Doesn't seem to be updating the table automatically...?
         case MCSessionState.connecting:
             print("Connecting: \(peerID.displayName)")
             

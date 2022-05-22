@@ -9,8 +9,7 @@ import UIKit
 import MultipeerConnectivity
 
 
-class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCSessionDelegate {
-    let gameHostVC = GameHostViewController()
+class HomeViewController: UIViewController, MCBrowserViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,39 +43,6 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
         dismiss(animated: true, completion: nil)
     }
     
-    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        switch(state){
-        case MCSessionState.connected:
-            print("Connected: \(peerID.displayName)")
-            gameHostVC.createPlayer(name: peerID.displayName) //y u no create player
-            gameHostVC.fetchPlayers() //Doesn't seem to be updating the table automatically...?
-        case MCSessionState.connecting:
-            print("Connecting: \(peerID.displayName)")
-            
-        case MCSessionState.notConnected:
-            print("Not connected: \(peerID.displayName)")
-            
-        default: print("Connection states default error.")
-            
-        }
-    }
-    
-    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        
-    }
-    
-    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
-        
-    }
-    
-    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
-        
-    }
-    
-    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
-        
-    }
-    
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,6 +53,4 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
             
         }
     }
-    
-    
 }
