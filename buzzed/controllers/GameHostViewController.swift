@@ -150,7 +150,7 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mpcHandler.currentView = self
+        mpcHandler.currentView? = self
     }
     
     
