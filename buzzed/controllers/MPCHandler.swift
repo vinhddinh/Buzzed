@@ -13,7 +13,7 @@
  class MPCHandler: NSObject {
     
     static var handler = MPCHandler()
-    var peerID: MCPeerID!
+    let peerID = MCPeerID (displayName: UIDevice.current.name)
     var session: MCSession!
     var browser: MCBrowserViewController!
     var advertiser: MCAdvertiserAssistant?
@@ -21,12 +21,7 @@
     
     override init() {
         super.init()
-        setupPeerWithDisplayName(displayName: UIDevice.current.name)
         setupSession()
-    }
-    
-    func setupPeerWithDisplayName(displayName: String) {
-        peerID = MCPeerID(displayName: displayName)
     }
     
     func setupSession() {
@@ -60,6 +55,9 @@
  extension MPCHandler: MCSessionDelegate {
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        if (state == MCSessionState.connected) {
+            print("Connected")
+        }
         DispatchQueue.main.async {
             self.delegate?.changed(state: state, of: peerID)
         }

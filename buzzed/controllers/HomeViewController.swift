@@ -17,7 +17,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func joinButtonPressed(_ sender: Any) {
-        mpcHandler.setupPeerWithDisplayName(displayName: UIDevice.current.name)
         mpcHandler.setupBrowser()
         mpcHandler.browser.delegate = self
         self.present(mpcHandler.browser, animated: true, completion: nil)
