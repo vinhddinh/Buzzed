@@ -52,9 +52,6 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
     /*** MARK: Lots of MultipeerConnectivity functions */
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
         dismiss(animated: true, completion: nil)
-//        let testViewController = self.storyboard?.instantiateViewController(withIdentifier: "MyTest") as! testViewController // I created MyTest in the identifier field of the identity inspector.
-
-//        self.dismiss(animated: false, completion: nil)
         let gameVC = self.storyboard?.instantiateViewController(withIdentifier: "GamePlayer") as! GamePlayerViewController
         gameVC.modalPresentationStyle = .fullScreen
         self.present(gameVC, animated: true, completion: nil)
