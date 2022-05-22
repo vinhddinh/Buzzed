@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF080EE7283A7B6300353A5C /* images in Resources */ = {isa = PBXBuildFile; fileRef = CF080EE6283A7B6300353A5C /* images */; };
+		CF9E730C283A9EB0004C419F /* HandlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9E730B283A9EB0004C419F /* HandlerViewController.swift */; };
 		F23CFBEA2823A8BD00A7E195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */; };
 		F23CFBF12823A8BD00A7E195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23CFBEF2823A8BD00A7E195 /* Main.storyboard */; };
 		F23CFBF62823A8BE00A7E195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23CFBF52823A8BE00A7E195 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		CF080EE6283A7B6300353A5C /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		CF9E730B283A9EB0004C419F /* HandlerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlerViewController.swift; sourceTree = "<group>"; };
 		F23CFBE62823A8BD00A7E195 /* buzzed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buzzed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F23CFBF02823A8BD00A7E195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				F24E5546282AAC1800C19429 /* HomeViewController.swift */,
 				F24E5599282AC27B00C19429 /* TimeLabelController.swift */,
 				F8974CB8283A736000B8283C /* MPCHandler.swift */,
+				CF9E730B283A9EB0004C419F /* HandlerViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				F8974CB9283A736000B8283C /* MPCHandler.swift in Sources */,
 				F24E5547282AAC1800C19429 /* HomeViewController.swift in Sources */,
 				F2E720EE283A028E00014145 /* CustomTableViewCell.swift in Sources */,
+				CF9E730C283A9EB0004C419F /* HandlerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
