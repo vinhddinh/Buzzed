@@ -185,7 +185,7 @@
         <!--GamePlayerVC-->
         <scene sceneID="fvm-Zd-5KS">
             <objects>
-                <viewController title="GamePlayerVC" id="XJ9-2q-Y6r" customClass="GamePlayerViewController" customModule="buzzed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GamePlayer" title="GamePlayerVC" id="XJ9-2q-Y6r" customClass="GamePlayerViewController" customModule="buzzed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O8d-aC-hb8" userLabel="LeaderboardView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

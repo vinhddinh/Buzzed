@@ -39,6 +39,8 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
         browser = MCBrowserViewController(serviceType: "buzzed", session: self.mcSession)
         browser.delegate = self
         self.present(browser, animated: true, completion: nil)
+        
+      
     }
     
     
@@ -50,6 +52,12 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
     /*** MARK: Lots of MultipeerConnectivity functions */
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
         dismiss(animated: true, completion: nil)
+//        let testViewController = self.storyboard?.instantiateViewController(withIdentifier: "MyTest") as! testViewController // I created MyTest in the identifier field of the identity inspector.
+
+//        self.dismiss(animated: false, completion: nil)
+        let gameVC = self.storyboard?.instantiateViewController(withIdentifier: "GamePlayer") as! GamePlayerViewController
+        gameVC.modalPresentationStyle = .fullScreen
+        self.present(gameVC, animated: true, completion: nil)
     }
     
     func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
@@ -88,16 +96,17 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
         
     }
     
-    
-    
-    /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+////         Get the new view controller using segue.destination.
+////         Pass the selected object to the new view controller.
+//        if segue.destination is GamePlayerViewController {
+//
+//        let playerVC = segue.destination as? GamePlayerViewController
+//
+//        }
+//    }
+    
 
 }
