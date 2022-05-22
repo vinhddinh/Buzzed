@@ -9,38 +9,28 @@ import UIKit
 import MultipeerConnectivity
 
 class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCSessionDelegate {
-    var peerID = MCPeerID (displayName: UIDevice.current.name)
+    let peerID = MCPeerID (displayName: UIDevice.current.name)
     var mcSession: MCSession!
     var browser: MCBrowserViewController!
     var advertiser: MCAdvertiserAssistant?
-    var delegate: MPCHandlerDelegate?
     
-   override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-//       setupConnectivity()
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("appeared!")
         setupConnectivity()
     }
     
     func setupConnectivity(){
-        peerID = MCPeerID (displayName: UIDevice.current.name)
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
         mcSession.delegate = self
     }
     
     @IBAction func joinButtonPressed(_ sender: Any) {
-//        mpcHandler.setupBrowser()
-//        mpcHandler.browser.delegate = self
-//        self.present(mpcHandler.browser, animated: true, completion: nil)
         browser = MCBrowserViewController(serviceType: "buzzed", session: self.mcSession)
         browser.delegate = self
         self.present(browser, animated: true, completion: nil)
-        
-      
     }
     
     
@@ -49,7 +39,7 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
         self.advertiser?.start()
     }
     
-    /*** MARK: Lots of MultipeerConnectivity functions */
+    /*** Lots of MultipeerConnectivity functions **/
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
         dismiss(animated: true, completion: nil)
         let gameVC = self.storyboard?.instantiateViewController(withIdentifier: "GamePlayer") as! GamePlayerViewController
@@ -65,12 +55,12 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
         switch(state){
         case MCSessionState.connected:
             print("Connected: \(peerID.displayName)")
-        
+            
         case MCSessionState.connecting:
             print("Connecting: \(peerID.displayName)")
-
+            
         case MCSessionState.notConnected:
-        print("Not connected: \(peerID.displayName)")
+            print("Not connected: \(peerID.displayName)")
             
         default: print("Connection states default error.")
             
@@ -95,15 +85,14 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
     
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-////         Get the new view controller using segue.destination.
-////         Pass the selected object to the new view controller.
-//        if segue.destination is GamePlayerViewController {
-//
-//        let playerVC = segue.destination as? GamePlayerViewController
-//
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //         Get the new view controller using segue.destination.
+        //         Pass the selected object to the new view controller.
+        if segue.destination is GamePlayerViewController {
+            _ = segue.destination as? GamePlayerViewController
+            
+        }
+    }
     
-
+    
 }

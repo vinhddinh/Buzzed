@@ -7,21 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF080EE3283A55A900353A5C /* buttonBuzzed.png in Resources */ = {isa = PBXBuildFile; fileRef = CF080EE0283A55A900353A5C /* buttonBuzzed.png */; };
-		CF080EE4283A55A900353A5C /* buzzedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CF080EE1283A55A900353A5C /* buzzedLogo.png */; };
-		CF080EE5283A55A900353A5C /* buttonBuzz.png in Resources */ = {isa = PBXBuildFile; fileRef = CF080EE2283A55A900353A5C /* buttonBuzz.png */; };
 		F23CFBEA2823A8BD00A7E195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */; };
 		F23CFBF12823A8BD00A7E195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23CFBEF2823A8BD00A7E195 /* Main.storyboard */; };
-		F23CFBF42823A8BD00A7E195 /* buzzed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F23CFBF22823A8BD00A7E195 /* buzzed.xcdatamodeld */; };
 		F23CFBF62823A8BE00A7E195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23CFBF52823A8BE00A7E195 /* Assets.xcassets */; };
 		F23CFBF92823A8BE00A7E195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23CFBF72823A8BE00A7E195 /* LaunchScreen.storyboard */; };
 		F23CFC042823A8BE00A7E195 /* buzzedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFC032823A8BE00A7E195 /* buzzedTests.swift */; };
 		F23CFC0E2823A8BE00A7E195 /* buzzedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFC0D2823A8BE00A7E195 /* buzzedUITests.swift */; };
 		F23CFC102823A8BE00A7E195 /* buzzedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFC0F2823A8BE00A7E195 /* buzzedUITestsLaunchTests.swift */; };
 		F24E5547282AAC1800C19429 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5546282AAC1800C19429 /* HomeViewController.swift */; };
+		F24E5549282AAC9400C19429 /* LobbyHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5548282AAC9400C19429 /* LobbyHostViewController.swift */; };
 		F24E554B282AACA100C19429 /* GameHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E554A282AACA100C19429 /* GameHostViewController.swift */; };
 		F24E5551282AACD800C19429 /* GamePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5550282AACD800C19429 /* GamePlayerViewController.swift */; };
-		F864024428375F3200400D02 /* MPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F864024328375F3200400D02 /* MPCHandler.swift */; };
+		F24E559A282AC27B00C19429 /* TimeLabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E5599282AC27B00C19429 /* TimeLabelController.swift */; };
+		F2E720EE283A028E00014145 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E720ED283A028E00014145 /* CustomTableViewCell.swift */; };
+		F2E720F0283A046D00014145 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E720EF283A046D00014145 /* Player.swift */; };
+		F2E720F8283A0FF200014145 /* BuzzedPlayers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2E720F6283A0FF200014145 /* BuzzedPlayers.xcdatamodeld */; };
+		F8974CB9283A736000B8283C /* MPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8974CB8283A736000B8283C /* MPCHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,13 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CF080EE0283A55A900353A5C /* buttonBuzzed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBuzzed.png; sourceTree = "<group>"; };
-		CF080EE1283A55A900353A5C /* buzzedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buzzedLogo.png; sourceTree = "<group>"; };
-		CF080EE2283A55A900353A5C /* buttonBuzz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBuzz.png; sourceTree = "<group>"; };
 		F23CFBE62823A8BD00A7E195 /* buzzed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buzzed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F23CFBF02823A8BD00A7E195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F23CFBF32823A8BD00A7E195 /* buzzed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = buzzed.xcdatamodel; sourceTree = "<group>"; };
 		F23CFBF52823A8BE00A7E195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F23CFBF82823A8BE00A7E195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F23CFBFA2823A8BE00A7E195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,9 +55,14 @@
 		F23CFC0D2823A8BE00A7E195 /* buzzedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buzzedUITests.swift; sourceTree = "<group>"; };
 		F23CFC0F2823A8BE00A7E195 /* buzzedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buzzedUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F24E5546282AAC1800C19429 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F24E5548282AAC9400C19429 /* LobbyHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyHostViewController.swift; sourceTree = "<group>"; };
 		F24E554A282AACA100C19429 /* GameHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHostViewController.swift; sourceTree = "<group>"; };
 		F24E5550282AACD800C19429 /* GamePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerViewController.swift; sourceTree = "<group>"; };
-		F864024328375F3200400D02 /* MPCHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCHandler.swift; sourceTree = "<group>"; };
+		F24E5599282AC27B00C19429 /* TimeLabelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLabelController.swift; sourceTree = "<group>"; };
+		F2E720ED283A028E00014145 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		F2E720EF283A046D00014145 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		F2E720F7283A0FF200014145 /* BuzzedPlayers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuzzedPlayers.xcdatamodel; sourceTree = "<group>"; };
+		F8974CB8283A736000B8283C /* MPCHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,23 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CF080EDF283A554B00353A5C /* images */ = {
-			isa = PBXGroup;
-			children = (
-				CF080EE2283A55A900353A5C /* buttonBuzz.png */,
-				CF080EE0283A55A900353A5C /* buttonBuzzed.png */,
-				CF080EE1283A55A900353A5C /* buzzedLogo.png */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
 		F205318D282BCF0E00C3E27B /* controllers */ = {
 			isa = PBXGroup;
 			children = (
 				F24E5550282AACD800C19429 /* GamePlayerViewController.swift */,
 				F24E554A282AACA100C19429 /* GameHostViewController.swift */,
+				F24E5548282AAC9400C19429 /* LobbyHostViewController.swift */,
 				F24E5546282AAC1800C19429 /* HomeViewController.swift */,
-				F864024328375F3200400D02 /* MPCHandler.swift */,
+				F24E5599282AC27B00C19429 /* TimeLabelController.swift */,
+				F8974CB8283A736000B8283C /* MPCHandler.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -132,14 +126,13 @@
 		F23CFBE82823A8BD00A7E195 /* buzzed */ = {
 			isa = PBXGroup;
 			children = (
-				CF080EDF283A554B00353A5C /* images */,
+				F2E720F9283A562800014145 /* model */,
 				F205318D282BCF0E00C3E27B /* controllers */,
 				F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */,
 				F23CFBEF2823A8BD00A7E195 /* Main.storyboard */,
 				F23CFBF52823A8BE00A7E195 /* Assets.xcassets */,
 				F23CFBF72823A8BE00A7E195 /* LaunchScreen.storyboard */,
 				F23CFBFA2823A8BE00A7E195 /* Info.plist */,
-				F23CFBF22823A8BD00A7E195 /* buzzed.xcdatamodeld */,
 			);
 			path = buzzed;
 			sourceTree = "<group>";
@@ -157,8 +150,18 @@
 			children = (
 				F23CFC0D2823A8BE00A7E195 /* buzzedUITests.swift */,
 				F23CFC0F2823A8BE00A7E195 /* buzzedUITestsLaunchTests.swift */,
+				F2E720F6283A0FF200014145 /* BuzzedPlayers.xcdatamodeld */,
 			);
 			path = buzzedUITests;
+			sourceTree = "<group>";
+		};
+		F2E720F9283A562800014145 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F2E720EF283A046D00014145 /* Player.swift */,
+				F2E720ED283A028E00014145 /* CustomTableViewCell.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,10 +270,7 @@
 			files = (
 				F23CFBF92823A8BE00A7E195 /* LaunchScreen.storyboard in Resources */,
 				F23CFBF62823A8BE00A7E195 /* Assets.xcassets in Resources */,
-				CF080EE5283A55A900353A5C /* buttonBuzz.png in Resources */,
 				F23CFBF12823A8BD00A7E195 /* Main.storyboard in Resources */,
-				CF080EE3283A55A900353A5C /* buttonBuzzed.png in Resources */,
-				CF080EE4283A55A900353A5C /* buzzedLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,12 +295,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E720F8283A0FF200014145 /* BuzzedPlayers.xcdatamodeld in Sources */,
 				F24E5551282AACD800C19429 /* GamePlayerViewController.swift in Sources */,
 				F23CFBEA2823A8BD00A7E195 /* AppDelegate.swift in Sources */,
+				F2E720F0283A046D00014145 /* Player.swift in Sources */,
 				F24E554B282AACA100C19429 /* GameHostViewController.swift in Sources */,
-				F23CFBF42823A8BD00A7E195 /* buzzed.xcdatamodeld in Sources */,
-				F864024428375F3200400D02 /* MPCHandler.swift in Sources */,
+				F24E5549282AAC9400C19429 /* LobbyHostViewController.swift in Sources */,
+				F24E559A282AC27B00C19429 /* TimeLabelController.swift in Sources */,
+				F8974CB9283A736000B8283C /* MPCHandler.swift in Sources */,
 				F24E5547282AAC1800C19429 /* HomeViewController.swift in Sources */,
+				F2E720EE283A028E00014145 /* CustomTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,13 +652,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F23CFBF22823A8BD00A7E195 /* buzzed.xcdatamodeld */ = {
+		F2E720F6283A0FF200014145 /* BuzzedPlayers.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F23CFBF32823A8BD00A7E195 /* buzzed.xcdatamodel */,
+				F2E720F7283A0FF200014145 /* BuzzedPlayers.xcdatamodel */,
 			);
-			currentVersion = F23CFBF32823A8BD00A7E195 /* buzzed.xcdatamodel */;
-			path = buzzed.xcdatamodeld;
+			currentVersion = F2E720F7283A0FF200014145 /* BuzzedPlayers.xcdatamodel */;
+			path = BuzzedPlayers.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

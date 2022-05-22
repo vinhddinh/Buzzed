@@ -1,12 +1,12 @@
- //
- //  MPCHandler.swift
- //  TicTacToe
- //
- //  Created by Vinh Dinh on 18/05/2022.
- //
+//
+//  MPCHandler.swift
+//  TicTacToe
+//
+//  Created by Vinh Dinh on 18/05/2022.
+//
  
- import UIKit
- import MultipeerConnectivity
+import UIKit
+import MultipeerConnectivity
  
 // var mpcHandler = MPCHandler.handler
  
@@ -30,7 +30,7 @@
     }
     
     func setupBrowser() {
-        browser = MCBrowserViewController(serviceType: "Buzzed", session: session)
+        browser = MCBrowserViewController(serviceType: "buzzed", session: session)
     }
     
     func advertiseSelf(advertise: Bool) {
@@ -39,7 +39,7 @@
             advertiser = nil
             return
         }
-        advertiser = MCAdvertiserAssistant(serviceType: "Buzzed", discoveryInfo: nil, session: session)
+        advertiser = MCAdvertiserAssistant(serviceType: "buzzed", discoveryInfo: nil, session: session)
         advertiser?.start()
     }
     
