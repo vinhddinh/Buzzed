@@ -9,7 +9,11 @@ import UIKit
 
 class GamePlayerViewController: UIViewController {
 
-//    override func viewDidLoad() {
+    @IBOutlet weak var buttonImage: UIImageView!
+    @IBAction func buttonDown(_ sender: Any) {
+        
+    }
+    //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //
 //        // Do any additional setup after loading the view.

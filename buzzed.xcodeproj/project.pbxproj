@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF080EE3283A55A900353A5C /* buttonBuzzed.png in Resources */ = {isa = PBXBuildFile; fileRef = CF080EE0283A55A900353A5C /* buttonBuzzed.png */; };
+		CF080EE4283A55A900353A5C /* buzzedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CF080EE1283A55A900353A5C /* buzzedLogo.png */; };
+		CF080EE5283A55A900353A5C /* buttonBuzz.png in Resources */ = {isa = PBXBuildFile; fileRef = CF080EE2283A55A900353A5C /* buttonBuzz.png */; };
 		F23CFBEA2823A8BD00A7E195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */; };
 		F23CFBF12823A8BD00A7E195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23CFBEF2823A8BD00A7E195 /* Main.storyboard */; };
 		F23CFBF42823A8BD00A7E195 /* buzzed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F23CFBF22823A8BD00A7E195 /* buzzed.xcdatamodeld */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF080EE0283A55A900353A5C /* buttonBuzzed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBuzzed.png; sourceTree = "<group>"; };
+		CF080EE1283A55A900353A5C /* buzzedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buzzedLogo.png; sourceTree = "<group>"; };
+		CF080EE2283A55A900353A5C /* buttonBuzz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBuzz.png; sourceTree = "<group>"; };
 		F23CFBE62823A8BD00A7E195 /* buzzed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buzzed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F23CFBF02823A8BD00A7E195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +88,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF080EDF283A554B00353A5C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				CF080EE2283A55A900353A5C /* buttonBuzz.png */,
+				CF080EE0283A55A900353A5C /* buttonBuzzed.png */,
+				CF080EE1283A55A900353A5C /* buzzedLogo.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		F205318D282BCF0E00C3E27B /* controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +132,7 @@
 		F23CFBE82823A8BD00A7E195 /* buzzed */ = {
 			isa = PBXGroup;
 			children = (
+				CF080EDF283A554B00353A5C /* images */,
 				F205318D282BCF0E00C3E27B /* controllers */,
 				F23CFBE92823A8BD00A7E195 /* AppDelegate.swift */,
 				F23CFBEF2823A8BD00A7E195 /* Main.storyboard */,
@@ -250,7 +267,10 @@
 			files = (
 				F23CFBF92823A8BE00A7E195 /* LaunchScreen.storyboard in Resources */,
 				F23CFBF62823A8BE00A7E195 /* Assets.xcassets in Resources */,
+				CF080EE5283A55A900353A5C /* buttonBuzz.png in Resources */,
 				F23CFBF12823A8BD00A7E195 /* Main.storyboard in Resources */,
+				CF080EE3283A55A900353A5C /* buttonBuzzed.png in Resources */,
+				CF080EE4283A55A900353A5C /* buzzedLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
