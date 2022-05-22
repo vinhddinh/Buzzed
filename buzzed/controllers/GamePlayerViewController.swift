@@ -11,7 +11,7 @@ class GamePlayerViewController: UIViewController {
 
     @IBOutlet weak var buttonImage: UIImageView!
     @IBAction func buttonDown(_ sender: Any) {
-        
+        buttonImage.image = UIImage(named: "buttonBuzzed.png")
     }
     //    override func viewDidLoad() {
 //        super.viewDidLoad()
