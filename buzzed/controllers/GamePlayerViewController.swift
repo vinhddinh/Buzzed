@@ -39,7 +39,9 @@ class GamePlayerViewController: HandlerViewController {
                 if (serverMessage == "LOCKBUZZERS")
                 {
                     print("Player received lock message from host")
-                    lockBuzzer(wasFirst: false)
+                    if (!buzzed) {
+                        lockBuzzer(wasFirst: false)
+                    }
                 }
                 else if (serverMessage == "RESETBUZZERS")
                 {
