@@ -82,6 +82,22 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
         playerSelected?.pointsScored += 1
 //        print(playerSelected?.pointsScored)
         self.fetchPlayers()
+        
+        // Update all clients
+        do {
+            // Get yourself a handy JSON
+            var playersDictionary: [String: Int] = [:]
+            for player in players! {
+                playersDictionary[player.deviceName!] = Int(player.pointsScored)
+            }
+            let encoder = JSONEncoder()
+            
+            // Broadcast message for players to lock buzzers
+            try mpcHandler.session.send(encoder.encode(playersDictionary), toPeers: mpcHandler.session.connectedPeers, with: .reliable)
+        } catch let error as NSError {
+            // Handle error
+            print(error.localizedDescription);
+        }
     }
     
     /***************
