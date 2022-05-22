@@ -46,7 +46,6 @@
                                         <buttonConfiguration key="configuration" style="filled" title="JOIN"/>
                                         <connections>
                                             <action selector="joinButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eig-2Q-IOM"/>
-                                            <segue destination="XJ9-2q-Y6r" kind="presentation" modalPresentationStyle="currentContext" id="kw7-Aw-Hdg"/>
                                         </connections>
                                     </button>
                                 </subviews>
