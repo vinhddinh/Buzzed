@@ -14,11 +14,13 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mpcHandler.session.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        mpcHandler.setupSession()
-        mpcHandler.session.delegate = self
+        //mpcHandler.setupSession()
+        print("\(mpcHandler.session.connectedPeers)")
+
     }
     
     @IBAction func joinButtonPressed(_ sender: Any) {

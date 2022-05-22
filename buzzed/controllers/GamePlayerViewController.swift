@@ -42,6 +42,7 @@ class GamePlayerViewController: UIViewController, MCBrowserViewControllerDelegat
             lockBuzzer()
             
             // Make call to the host that this peer buzzed in
+            print("\(mpcHandler.session.connectedPeers)")
             if mpcHandler.session.connectedPeers.count > 0 {
                 do {
                     // Broadcast peer ID for host to receive
