@@ -48,7 +48,7 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
         switch(state){
         case MCSessionState.connected:
             print("Connected: \(peerID.displayName)")
-            gameHostVC.createPlayer(name: peerID.displayName)
+            gameHostVC.createPlayer(name: peerID.displayName) //y u no create player
             gameHostVC.fetchPlayers() //Doesn't seem to be updating the table automatically...?
         case MCSessionState.connecting:
             print("Connecting: \(peerID.displayName)")

@@ -138,6 +138,7 @@
 				F23CFBEF2823A8BD00A7E195 /* Main.storyboard */,
 				F23CFBF52823A8BE00A7E195 /* Assets.xcassets */,
 				F23CFBF72823A8BE00A7E195 /* LaunchScreen.storyboard */,
+				F2E720F6283A0FF200014145 /* BuzzedPlayers.xcdatamodeld */,
 				F23CFBFA2823A8BE00A7E195 /* Info.plist */,
 			);
 			path = buzzed;
@@ -156,7 +157,6 @@
 			children = (
 				F23CFC0D2823A8BE00A7E195 /* buzzedUITests.swift */,
 				F23CFC0F2823A8BE00A7E195 /* buzzedUITestsLaunchTests.swift */,
-				F2E720F6283A0FF200014145 /* BuzzedPlayers.xcdatamodeld */,
 			);
 			path = buzzedUITests;
 			sourceTree = "<group>";
