@@ -23,7 +23,6 @@
         super.init()
         setupPeerWithDisplayName(displayName: UIDevice.current.name)
         setupSession()
-        advertiseSelf(advertise: true)
     }
     
     func setupPeerWithDisplayName(displayName: String) {
