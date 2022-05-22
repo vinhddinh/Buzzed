@@ -9,7 +9,7 @@ import UIKit
 import MultipeerConnectivity
 
 class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCSessionDelegate {
-    var peerID = MCPeerID (displayName: UIDevice.current.name)
+    let peerID = MCPeerID (displayName: UIDevice.current.name)
     var mcSession: MCSession!
     var browser: MCBrowserViewController!
     var advertiser: MCAdvertiserAssistant?
@@ -24,7 +24,6 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
     }
     
     func setupConnectivity(){
-        peerID = MCPeerID (displayName: UIDevice.current.name)
         mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
         mcSession.delegate = self
     }
@@ -91,7 +90,7 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
         //         Get the new view controller using segue.destination.
         //         Pass the selected object to the new view controller.
         if segue.destination is GamePlayerViewController {
-            let gamePlayerVC = segue.destination as? GamePlayerViewController
+            _ = segue.destination as? GamePlayerViewController
             
         }
     }
