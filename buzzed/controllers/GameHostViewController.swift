@@ -6,9 +6,15 @@
 //
 
 import UIKit
+<<<<<<< HEAD
 import CoreData
 
 class GameHostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+=======
+import MultipeerConnectivity
+
+class GameHostViewController: UIViewController{
+>>>>>>> UC-101
     
     @IBOutlet var confirmEndView: UIView!
     @IBOutlet var blurView: UIVisualEffectView!
@@ -104,9 +110,16 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
+<<<<<<< HEAD
         mpcHandler.advertiser?.stop()
     }
     
+=======
+//        mpcHandler.advertiser?.stop()
+    }
+    
+    
+>>>>>>> UC-101
     //Animates in blurred background
     func animateIn(view: UIView){
         let background = self.view!
@@ -122,6 +135,7 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         mpcHandler.setupPeerWithDisplayName(displayName: UIDevice.current.name)
         mpcHandler.setupSession()
         mpcHandler.advertiseSelf(advertise: true)
@@ -146,6 +160,11 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
                 }
     }
     
+=======
+        
+    }
+
+>>>>>>> UC-101
     /*
     // MARK: - Navigation
 
@@ -156,4 +175,14 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
     }
     */
 
+}
+
+extension GameHostViewController: MPCHandlerDelegate {
+    func changed(state: MCSessionState, of peer: MCPeerID) {
+    }
+    
+    func received(data: Data, from peer: MCPeerID) {
+    }
+    
+    
 }

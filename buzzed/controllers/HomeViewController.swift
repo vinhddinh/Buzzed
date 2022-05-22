@@ -8,14 +8,20 @@
 import UIKit
 import MultipeerConnectivity
 
-class HomeViewController: UIViewController {
-
-    override func viewDidLoad() {
+class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCSessionDelegate {
+    var peerID = MCPeerID (displayName: UIDevice.current.name)
+    var mcSession: MCSession!
+    var browser: MCBrowserViewController!
+    var advertiser: MCAdvertiserAssistant?
+    var delegate: MPCHandlerDelegate?
+    
+   override func viewDidLoad() {
         super.viewDidLoad()
-
+//       setupConnectivity()
         // Do any additional setup after loading the view.
     }
     
+<<<<<<< HEAD
     @IBAction func joinButtonPressed(_ sender: Any) {
         mpcHandler.setupPeerWithDisplayName(displayName: UIDevice.current.name)
         mpcHandler.setupBrowser()
@@ -23,6 +29,77 @@ class HomeViewController: UIViewController {
         self.present(mpcHandler.browser, animated: true, completion: nil)
     }
     
+=======
+    override func viewDidAppear(_ animated: Bool) {
+        print("appeared!")
+        setupConnectivity()
+    }
+    
+    func setupConnectivity(){
+        peerID = MCPeerID (displayName: UIDevice.current.name)
+        mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
+        mcSession.delegate = self
+    }
+    
+    @IBAction func joinButtonPressed(_ sender: Any) {
+//        mpcHandler.setupBrowser()
+//        mpcHandler.browser.delegate = self
+//        self.present(mpcHandler.browser, animated: true, completion: nil)
+        browser = MCBrowserViewController(serviceType: "buzzed", session: self.mcSession)
+        browser.delegate = self
+        self.present(browser, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func hostButtonPressed(_ sender: Any) {
+        self.advertiser = MCAdvertiserAssistant(serviceType: "buzzed", discoveryInfo: nil, session: self.mcSession)
+        self.advertiser?.start()
+    }
+    
+    /*** MARK: Lots of MultipeerConnectivity functions */
+    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        switch(state){
+        case MCSessionState.connected:
+            print("Connected: \(peerID.displayName)")
+        
+        case MCSessionState.connecting:
+            print("Connecting: \(peerID.displayName)")
+
+        case MCSessionState.notConnected:
+        print("Not connected: \(peerID.displayName)")
+            
+        default: print("Connection states default error.")
+            
+        }
+    }
+    
+    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        
+    }
+    
+    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+        
+    }
+    
+    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+        
+    }
+    
+    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
+        
+    }
+    
+    
+    
+>>>>>>> UC-101
     /*
     // MARK: - Navigation
 

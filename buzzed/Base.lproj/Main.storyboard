@@ -11,7 +11,7 @@
         <!--HomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="HomeVC" id="BYZ-38-t0r" customClass="HomeViewController" customModule="buzzed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="HomeVC" id="BYZ-38-t0r" customClass="HomeViewController" customModule="buzzed" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,6 +28,10 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="HOST"/>
                                 <connections>
+<<<<<<< HEAD
+=======
+                                    <action selector="hostButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ffH-2O-8P3"/>
+>>>>>>> UC-101
                                     <segue destination="BJB-en-12a" kind="presentation" id="95m-ch-9Mi"/>
                                 </connections>
                             </button>
@@ -55,6 +59,7 @@
             </objects>
             <point key="canvasLocation" x="-358" y="59"/>
         </scene>
+<<<<<<< HEAD
         <!--LobbyHostVC-->
         <scene sceneID="qVf-Rw-4AG">
             <objects>
@@ -124,6 +129,8 @@
             </objects>
             <point key="canvasLocation" x="2777" y="773"/>
         </scene>
+=======
+>>>>>>> UC-101
         <!--GameHostVC-->
         <scene sceneID="3tu-hk-vT4">
             <objects>
@@ -292,6 +299,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="-359.4202898550725" y="886.60714285714278"/>
         </scene>
         <!--HostListVC-->
@@ -413,6 +421,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DWC-Bi-HQP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1880" y="-670"/>
+=======
+            <point key="canvasLocation" x="-359" y="887"/>
+>>>>>>> UC-101
         </scene>
         <!--GamePlayerVC-->
         <scene sceneID="fvm-Zd-5KS">
@@ -489,6 +500,7 @@
                 </visualEffectView>
             </objects>
             <point key="canvasLocation" x="510" y="59"/>
+<<<<<<< HEAD
         </scene>
         <!--LeaderboardVC-->
         <scene sceneID="7e1-A6-sAA">
@@ -527,6 +539,8 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JtB-xJ-xr4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3815.9420289855075" y="97.767857142857139"/>
+=======
+>>>>>>> UC-101
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FPc-8g-XLK">
@@ -542,7 +556,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9NT-g4-SCO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1574" y="72"/>
+            <point key="canvasLocation" x="-1349" y="59"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
