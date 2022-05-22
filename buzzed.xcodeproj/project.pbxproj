@@ -22,6 +22,7 @@
 		F2E720EE283A028E00014145 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E720ED283A028E00014145 /* CustomTableViewCell.swift */; };
 		F2E720F0283A046D00014145 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E720EF283A046D00014145 /* Player.swift */; };
 		F2E720F8283A0FF200014145 /* BuzzedPlayers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2E720F6283A0FF200014145 /* BuzzedPlayers.xcdatamodeld */; };
+		F8974CB9283A736000B8283C /* MPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8974CB8283A736000B8283C /* MPCHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		F2E720ED283A028E00014145 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		F2E720EF283A046D00014145 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F2E720F7283A0FF200014145 /* BuzzedPlayers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuzzedPlayers.xcdatamodel; sourceTree = "<group>"; };
+		F8974CB8283A736000B8283C /* MPCHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				F24E5548282AAC9400C19429 /* LobbyHostViewController.swift */,
 				F24E5546282AAC1800C19429 /* HomeViewController.swift */,
 				F24E5599282AC27B00C19429 /* TimeLabelController.swift */,
+				F8974CB8283A736000B8283C /* MPCHandler.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				F24E554B282AACA100C19429 /* GameHostViewController.swift in Sources */,
 				F24E5549282AAC9400C19429 /* LobbyHostViewController.swift in Sources */,
 				F24E559A282AC27B00C19429 /* TimeLabelController.swift in Sources */,
+				F8974CB9283A736000B8283C /* MPCHandler.swift in Sources */,
 				F24E5547282AAC1800C19429 /* HomeViewController.swift in Sources */,
 				F2E720EE283A028E00014145 /* CustomTableViewCell.swift in Sources */,
 			);
