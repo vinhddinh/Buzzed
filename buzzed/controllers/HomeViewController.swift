@@ -8,9 +8,10 @@
 import UIKit
 import MultipeerConnectivity
 
+var mcSession: MCSession!
+
 class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCSessionDelegate {
     let peerID = MCPeerID (displayName: UIDevice.current.name)
-    var mcSession: MCSession!
     var browser: MCBrowserViewController!
     var advertiser: MCAdvertiserAssistant?
     
@@ -28,14 +29,14 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
     }
     
     @IBAction func joinButtonPressed(_ sender: Any) {
-        browser = MCBrowserViewController(serviceType: "buzzed", session: self.mcSession)
+        browser = MCBrowserViewController(serviceType: "buzzed", session: mcSession)
         browser.delegate = self
         self.present(browser, animated: true, completion: nil)
     }
     
     
     @IBAction func hostButtonPressed(_ sender: Any) {
-        self.advertiser = MCAdvertiserAssistant(serviceType: "buzzed", discoveryInfo: nil, session: self.mcSession)
+        self.advertiser = MCAdvertiserAssistant(serviceType: "buzzed", discoveryInfo: nil, session: mcSession)
         self.advertiser?.start()
     }
     
