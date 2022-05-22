@@ -67,7 +67,6 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var blurView: UIVisualEffectView!
     @IBOutlet weak var tableView: UITableView!
     var playerName: String = ""
-    //    var playerIndex: Int = 0
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var players:[PlayerMO]? //player managed object
@@ -83,7 +82,6 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
             return count
         }
         return 1
-        //        return players?.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -108,7 +106,6 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
             print(name)
         }
         playerSelected?.pointsScored += 1
-//        print(playerSelected?.pointsScored)
         self.fetchPlayers()
     }
     
@@ -142,7 +139,7 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
         newPlayer.pointsScored = 0
         
         //save object
-        do{
+        do {
             try self.context.save()
             self.fetchPlayers()
         } catch {
