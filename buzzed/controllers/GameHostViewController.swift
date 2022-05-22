@@ -132,6 +132,7 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
+        mpcHandler.advertiseSelf(advertise: false)
     }
     
     //Animates in blurred background
