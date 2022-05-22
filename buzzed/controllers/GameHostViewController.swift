@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
 class GameHostViewController: UIViewController {
+    
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet var confirmEndView: UIView!
     @IBOutlet var blurView: UIVisualEffectView!
@@ -40,9 +43,9 @@ class GameHostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mpcHandler.setupPeerWithDisplayName(displayName: UIDevice.current.name)
         mpcHandler.setupSession()
         mpcHandler.advertiseSelf(advertise: true)
+        mpcHandler.delegate = self
     }
 
     /*
@@ -55,4 +58,14 @@ class GameHostViewController: UIViewController {
     }
     */
 
+}
+
+extension GameHostViewController: MPCHandlerDelegate {
+    func changed(state: MCSessionState, of peer: MCPeerID) {
+    }
+    
+    func received(data: Data, from peer: MCPeerID) {
+    }
+    
+    
 }
