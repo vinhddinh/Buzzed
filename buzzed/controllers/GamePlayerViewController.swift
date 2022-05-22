@@ -15,7 +15,7 @@ class GamePlayerViewController: HandlerViewController {
     @IBOutlet weak var buttonImage: UIImageView!
     @IBAction func buttonDown(_ sender: Any) {
         if !buzzed {
-            lockBuzzer()
+            lockBuzzer(wasFirst: true)
             
             // Make call to the host that this peer buzzed in
             print("\(mpcHandler.session.connectedPeers)")
@@ -39,7 +39,7 @@ class GamePlayerViewController: HandlerViewController {
                 if (serverMessage == "LOCKBUZZERS")
                 {
                     print("Player received lock message from host")
-                    lockBuzzer()
+                    lockBuzzer(wasFirst: false)
                 }
                 else if (serverMessage == "RESETBUZZERS")
                 {
@@ -49,14 +49,22 @@ class GamePlayerViewController: HandlerViewController {
         }
     }
 
-    func lockBuzzer() {
+    func lockBuzzer(wasFirst: Bool) {
         buttonImage.image = UIImage(named: "buttonBuzzed.png")
         buzzed = true
+        
+        if wasFirst {
+            buttonImage.alpha = 1.0
+        }
+        else {
+            buttonImage.alpha = 0.2
+        }
     }
     
     func resetBuzzer() {
         buttonImage.image = UIImage(named: "buttonBuzz.png")
         buzzed = false
+        buttonImage.alpha = 1.0
     }
     
     override func viewDidLoad() {
