@@ -7,8 +7,46 @@
 
 import UIKit
 
-class GameHostViewController: UIViewController {
-    
+class GameHostViewController: HandlerViewController, UITableViewDelegate, UITableViewDataSource {
+    override func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        print("Host received message: " + String(data: data, encoding: .utf8)!)
+        if let playerName = String(data: data, encoding: .utf8) {
+            DispatchQueue.main.async { [unowned self] in
+                if (playerName != "LOCKBUZZERS")
+                {
+                    // TODO: Identify player with name playerName as having buzzed in first
+                    print("Host received buzz")
+
+                    // Tell all players to lock their buzzers
+                    if mpcHandler.session.connectedPeers.count > 0 {
+                        print("Host sending lock message to peers")
+                        do {
+                            try mpcHandler.session.send(Data("LOCKBUZZERS".utf8), toPeers: mpcHandler.session.connectedPeers, with: .reliable)
+                            } catch let error as NSError {
+                                // Handle error
+                                print(error.localizedDescription);
+                            }
+                        
+                        print("Host sending score message to peers")
+                        do {
+                            // Get yourself a handy JSON
+                            var playersDictionary: [String: Int] = [:]
+                            for player in players! {
+                                playersDictionary[player.deviceName!] = Int(player.pointsScored)
+                            }
+                            let encoder = JSONEncoder()
+                            
+                            // Broadcast message for players to lock buzzers
+                            try mpcHandler.session.send(encoder.encode(playersDictionary), toPeers: mpcHandler.session.connectedPeers, with: .reliable)
+                        } catch let error as NSError {
+                            // Handle error
+                            print(error.localizedDescription);
+                        }
+                    }
+                }
+            }
+        }
+    }
     @IBOutlet var confirmEndView: UIView!
     @IBOutlet var blurView: UIVisualEffectView!
     
@@ -37,6 +75,40 @@ class GameHostViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        mpcHandler.currentView? = self // THIS DOESN'T WORK. WHY?!?!?!?!
+    }
+    
+    
+    //For testing purposes, this currently deletes all player data.
+    //For deployment, this should reset all points to 0
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        
+//        let request = PlayerMO.fetchRequest() as NSFetchRequest<PlayerMO>
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//
+//        do{
+//            if let result = try? context.fetch(request){
+//                for player in result {
+//                    context.delete(player)
+//                }
+//            }
+//            try context.save()
+//        } catch {
+//
+//        }
+        self.fetchPlayers()
+        // TODO: Probably delete this...
+        // Tell all players to unlock their buzzers
+        if mpcHandler.session.connectedPeers.count > 0 {
+            do {
+                // Broadcast message for players to lock buzzers
+                try mpcHandler.session.send(Data("RESETBUZZERS".utf8), toPeers: mpcHandler.session.connectedPeers, with: .reliable)
+            } catch let error as NSError {
+                // Handle error
+                print(error.localizedDescription);
+            }
+        }
+>>>>>>> Stashed changes
     }
     
 
