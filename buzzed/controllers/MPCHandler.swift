@@ -8,11 +8,11 @@
 import UIKit
 import MultipeerConnectivity
  
-// var mpcHandler = MPCHandler.handler
- 
+var mpcHandler = MPCHandler.handler
+//session is mpcHandler.session
  class MPCHandler: NSObject {
     
-    var handler = MPCHandler()
+    static var handler = MPCHandler()
     let peerID = MCPeerID (displayName: UIDevice.current.name)
     var session: MCSession!
     var browser: MCBrowserViewController!
@@ -25,7 +25,7 @@ import MultipeerConnectivity
     }
     
     func setupSession() {
-        session = MCSession(peer: peerID)
+        session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
         session.delegate = self
     }
     

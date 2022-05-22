@@ -8,12 +8,8 @@
 import UIKit
 import MultipeerConnectivity
 
-var mcSession: MCSession!
 
 class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCSessionDelegate {
-    let peerID = MCPeerID (displayName: UIDevice.current.name)
-    var browser: MCBrowserViewController!
-    var advertiser: MCAdvertiserAssistant?
     let gameHostVC = GameHostViewController()
     
     override func viewDidLoad() {
@@ -21,24 +17,19 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        setupConnectivity()
-    }
-    
-    func setupConnectivity(){
-        mcSession = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .required)
-        mcSession.delegate = self
+        mpcHandler.setupSession()
+        mpcHandler.session.delegate = self
     }
     
     @IBAction func joinButtonPressed(_ sender: Any) {
-        browser = MCBrowserViewController(serviceType: "buzzed", session: mcSession)
-        browser.delegate = self
-        self.present(browser, animated: true, completion: nil)
+        mpcHandler.setupBrowser()
+        mpcHandler.browser.delegate = self
+        self.present(mpcHandler.browser, animated: true, completion: nil)
     }
     
     
     @IBAction func hostButtonPressed(_ sender: Any) {
-        self.advertiser = MCAdvertiserAssistant(serviceType: "buzzed", discoveryInfo: nil, session: mcSession)
-        self.advertiser?.start()
+        mpcHandler.advertiseSelf(advertise: true)
     }
     
     /*** Lots of MultipeerConnectivity functions **/
@@ -57,7 +48,6 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
         switch(state){
         case MCSessionState.connected:
             print("Connected: \(peerID.displayName)")
-            print(session.connectedPeers.count)
             gameHostVC.createPlayer(name: peerID.displayName)
             gameHostVC.fetchPlayers() //Doesn't seem to be updating the table automatically...?
         case MCSessionState.connecting:

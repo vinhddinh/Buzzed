@@ -42,10 +42,10 @@ class GamePlayerViewController: UIViewController, MCBrowserViewControllerDelegat
             lockBuzzer()
             
             // Make call to the host that this peer buzzed in
-            if mcSession.connectedPeers.count > 0 {
+            if mpcHandler.session.connectedPeers.count > 0 {
                 do {
                     // Broadcast peer ID for host to receive
-                    try mcSession.send(Data(UIDevice.current.name.utf8), toPeers: mcSession.connectedPeers, with: .reliable)
+                    try mpcHandler.session.send(Data(UIDevice.current.name.utf8), toPeers: mpcHandler.session.connectedPeers, with: .reliable)
                     print("Client sent buzz to host")
                 } catch let error as NSError {
                     // Handle error

@@ -44,10 +44,10 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
                     print("Host received buzz")
 
                     // Tell all players to lock their buzzers
-                    if mcSession.connectedPeers.count > 0 {
+                    if mpcHandler.session.connectedPeers.count > 0 {
                         do {
                             // Broadcast message for players to lock buzzers
-                            try mcSession.send(Data("LOCKBUZZERS".utf8), toPeers: mcSession.connectedPeers, with: .reliable)
+                            try mpcHandler.session.send(Data("LOCKBUZZERS".utf8), toPeers: mpcHandler.session.connectedPeers, with: .reliable)
                             print("Host sent lock message to peers")
                         } catch let error as NSError {
                             // Handle error
@@ -195,10 +195,10 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
         self.fetchPlayers()
         // TODO: Probably delete this...
         // Tell all players to unlock their buzzers
-        if mcSession.connectedPeers.count > 0 {
+        if mpcHandler.session.connectedPeers.count > 0 {
             do {
                 // Broadcast message for players to lock buzzers
-                try mcSession.send(Data("RESETBUZZERS".utf8), toPeers: mcSession.connectedPeers, with: .reliable)
+                try mpcHandler.session.send(Data("RESETBUZZERS".utf8), toPeers: mpcHandler.session.connectedPeers, with: .reliable)
             } catch let error as NSError {
                 // Handle error
                 print(error.localizedDescription);
