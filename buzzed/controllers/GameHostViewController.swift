@@ -9,9 +9,6 @@ import UIKit
 import CoreData
 import MultipeerConnectivity
 
-<<<<<<< HEAD
-class GameHostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-=======
 class GameHostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MCBrowserViewControllerDelegate, MCSessionDelegate {
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
         
@@ -61,7 +58,6 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
     }
->>>>>>> button-do-thing
     
     @IBOutlet var confirmEndView: UIView!
     @IBOutlet var blurView: UIVisualEffectView!
@@ -196,10 +192,7 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
         } catch {
             
         }
-<<<<<<< HEAD
         self.fetchPlayers()
-=======
-        
         // TODO: Probably delete this...
         // Tell all players to unlock their buzzers
         if mcSession.connectedPeers.count > 0 {
@@ -211,7 +204,6 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
                 print(error.localizedDescription);
             }
         }
->>>>>>> button-do-thing
     }
     
     
