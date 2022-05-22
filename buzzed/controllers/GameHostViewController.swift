@@ -8,9 +8,7 @@
 import UIKit
 import MultipeerConnectivity
 
-class GameHostViewController: UIViewController {
-    
-    var appDelegate = UIApplication.shared.delegate as! AppDelegate
+class GameHostViewController: UIViewController{
     
     @IBOutlet var confirmEndView: UIView!
     @IBOutlet var blurView: UIVisualEffectView!
@@ -24,7 +22,7 @@ class GameHostViewController: UIViewController {
     }
     
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
-        mpcHandler.advertiser?.stop()
+//        mpcHandler.advertiser?.stop()
     }
     
     
@@ -43,9 +41,7 @@ class GameHostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mpcHandler.setupSession()
-        mpcHandler.advertiseSelf(advertise: true)
-        mpcHandler.delegate = self
+        
     }
 
     /*
