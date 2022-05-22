@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
     let peerID = MCPeerID (displayName: UIDevice.current.name)
     var browser: MCBrowserViewController!
     var advertiser: MCAdvertiserAssistant?
+    let gameHostVC = GameHostViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,9 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
         switch(state){
         case MCSessionState.connected:
             print("Connected: \(peerID.displayName)")
-            
+            print(session.connectedPeers.count)
+            gameHostVC.createPlayer(name: peerID.displayName)
+            gameHostVC.fetchPlayers() //Doesn't seem to be updating the table automatically...?
         case MCSessionState.connecting:
             print("Connecting: \(peerID.displayName)")
             

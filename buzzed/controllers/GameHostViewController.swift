@@ -7,12 +7,14 @@
 
 import UIKit
 import CoreData
+import MultipeerConnectivity
 
-class GameHostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class GameHostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet var confirmEndView: UIView!
     @IBOutlet var blurView: UIVisualEffectView!
     @IBOutlet weak var tableView: UITableView!
+    var playerName: String = ""
     //    var playerIndex: Int = 0
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -54,7 +56,7 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
             print(name)
         }
         playerSelected?.pointsScored += 1
-        print(playerSelected?.pointsScored)
+//        print(playerSelected?.pointsScored)
         self.fetchPlayers()
     }
     
@@ -79,19 +81,21 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func testPopulateButtonPressed(_ sender: Any) {
+        self.fetchPlayers()
+    }
+
+    func createPlayer(name: String){
         let newPlayer = PlayerMO(context: self.context)
-        newPlayer.deviceName = "Banana"
+        newPlayer.deviceName = name
         newPlayer.pointsScored = 0
         
         //save object
         do{
             try self.context.save()
+            self.fetchPlayers()
         } catch {
-            print("Error in saving player object")
-        }
-        
-        //refresh the tableview
-        self.fetchPlayers()
+                print("Error in saving player object")
+            }
     }
     
     /* UI Functions */
@@ -140,7 +144,9 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
         } catch {
             
         }
+        self.fetchPlayers()
     }
+    
     
     /*
      // MARK: - Navigation
