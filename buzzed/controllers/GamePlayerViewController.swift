@@ -8,31 +8,7 @@
 import UIKit
 import MultipeerConnectivity
 
-class GamePlayerViewController: UIViewController, MCBrowserViewControllerDelegate, MCSessionDelegate {
-    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-        
-    }
-    
-    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-        
-    }
-    
-    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        
-    }
-    
-    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
-        
-    }
-    
-    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
-        
-    }
-    
-    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
-        
-    }
-    
+class GamePlayerViewController: HandlerViewController {
     var buzzed: Bool = false
     
     @IBOutlet weak var button: UIButton!
@@ -56,8 +32,8 @@ class GamePlayerViewController: UIViewController, MCBrowserViewControllerDelegat
         }
     }
     
-    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        print("Player received message")
+    override func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        print("Player received message: " + String(data: data, encoding: .utf8)!)
         if let serverMessage = String(data: data, encoding: .utf8) {
             DispatchQueue.main.async { [unowned self] in
                 if (serverMessage == "LOCKBUZZERS")
@@ -65,7 +41,7 @@ class GamePlayerViewController: UIViewController, MCBrowserViewControllerDelegat
                     print("Player received lock message from host")
                     lockBuzzer()
                 }
-                else if (serverMessage == "RESETBUZZZERS")
+                else if (serverMessage == "RESETBUZZERS")
                 {
                     resetBuzzer()
                 }
@@ -87,6 +63,7 @@ class GamePlayerViewController: UIViewController, MCBrowserViewControllerDelegat
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         button.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        mpcHandler.currentView = self
     }
     
 

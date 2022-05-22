@@ -18,6 +18,8 @@ var mpcHandler = MPCHandler.handler
     var browser: MCBrowserViewController!
     var advertiser: MCAdvertiserAssistant?
     var delegate: MPCHandlerDelegate?
+     
+    var currentView: HandlerViewController?
     
     override init() {
         super.init()
@@ -80,6 +82,9 @@ var mpcHandler = MPCHandler.handler
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         DispatchQueue.main.async {
             self.delegate?.received(data: data, from: peerID)
+            if self.currentView != nil {
+                self.currentView?.session(session, didReceive: data, fromPeer: peerID)
+            }
         }
     }
     

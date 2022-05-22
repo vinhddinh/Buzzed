@@ -9,33 +9,9 @@ import UIKit
 import CoreData
 import MultipeerConnectivity
 
-class GameHostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MCBrowserViewControllerDelegate, MCSessionDelegate {
-    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-        
-    }
-    
-    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-        
-    }
-    
-    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        
-    }
-    
-    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
-        
-    }
-    
-    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
-        
-    }
-    
-    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
-        
-    }
-    
-    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        print("Host received message")
+class GameHostViewController: HandlerViewController, UITableViewDelegate, UITableViewDataSource {
+    override func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        print("Host received message: " + String(data: data, encoding: .utf8)!)
         if let playerName = String(data: data, encoding: .utf8) {
             DispatchQueue.main.async { [unowned self] in
                 if (playerName != "LOCKBUZZERS")
@@ -173,6 +149,7 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mpcHandler.currentView = self
     }
     
     
