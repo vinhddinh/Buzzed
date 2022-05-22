@@ -105,8 +105,6 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func testPopulateButtonPressed(_ sender: Any) {
-        print(players?.count)
-
         self.fetchPlayers()
     }
 
