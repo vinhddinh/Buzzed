@@ -8,13 +8,31 @@
 import UIKit
 import MultipeerConnectivity
 
-class GamePlayerViewController: UIViewController {
-    var peerID = MCPeerID (displayName: UIDevice.current.name)
-    var mcSession: MCSession!
-    var browser: MCBrowserViewController!
-    var advertiser: MCAdvertiserAssistant?
-    var delegate: MPCHandlerDelegate?
-
+class GamePlayerViewController: UIViewController, MCBrowserViewControllerDelegate, MCSessionDelegate {
+    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
+        
+    }
+    
+    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
+        
+    }
+    
+    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        
+    }
+    
+    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+        
+    }
+    
+    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+        
+    }
+    
+    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
+        
+    }
+    
     var buzzed: Bool = false
     
     @IBOutlet weak var button: UIButton!
@@ -27,7 +45,8 @@ class GamePlayerViewController: UIViewController {
             if mcSession.connectedPeers.count > 0 {
                 do {
                     // Broadcast peer ID for host to receive
-                    try mcSession.send(Data(peerID.displayName.utf8), toPeers: mcSession.connectedPeers, with: .reliable)
+                    try mcSession.send(Data(UIDevice.current.name.utf8), toPeers: mcSession.connectedPeers, with: .reliable)
+                    print("Client sent buzz to host")
                 } catch let error as NSError {
                     // Handle error
                     print(error.localizedDescription);
@@ -37,10 +56,12 @@ class GamePlayerViewController: UIViewController {
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        print("Player received message")
         if let serverMessage = String(data: data, encoding: .utf8) {
             DispatchQueue.main.async { [unowned self] in
                 if (serverMessage == "LOCKBUZZERS")
                 {
+                    print("Player received lock message from host")
                     lockBuzzer()
                 }
                 else if (serverMessage == "RESETBUZZZERS")
@@ -51,29 +72,6 @@ class GamePlayerViewController: UIViewController {
         }
     }
 
-    
-//    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-//        if let playerName = String(data: data, encoding: .utf8) {
-//            DispatchQueue.main.async { [unowned self] in
-//                if (playerName != "LOCKBUZZERS")
-//                {
-//                    // TODO: Identify player with name playerName as having buzzed in first
-//
-//                    // Tell all players to lock their buzzers
-//                    if mcSession.connectedPeers.count > 0 {
-//                        do {
-//                            // Broadcast message for players to lock buzzers
-//                            try mcSession.send(Data("LOCKBUZZERS".utf8), toPeers: mcSession.connectedPeers, with: .reliable)
-//                        } catch let error as NSError {
-//                            // Handle error
-//                            print(error.localizedDescription);
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
-    
     func lockBuzzer() {
         buttonImage.image = UIImage(named: "buttonBuzzed.png")
         buzzed = true
