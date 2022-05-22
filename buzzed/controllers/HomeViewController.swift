@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
 class HomeViewController: UIViewController {
 
@@ -15,7 +16,13 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func joinButtonPressed(_ sender: Any) {
+        mpcHandler.setupPeerWithDisplayName(displayName: UIDevice.current.name)
+        mpcHandler.setupBrowser()
+        mpcHandler.browser.delegate = self
+        self.present(mpcHandler.browser, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -26,4 +33,37 @@ class HomeViewController: UIViewController {
     }
     */
 
+}
+
+extension HomeViewController : MCBrowserViewControllerDelegate, MCSessionDelegate {
+    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        
+    }
+    
+    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        
+    }
+    
+    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+        
+    }
+    
+    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+        
+    }
+    
+    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
+        
+    }
+    
+    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
+        dismiss(animated: true) {
+            //TODO Present actual playerVC
+            self.present(GamePlayerViewController(), animated: true)
+        }
+    }
+    
+    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
+        dismiss(animated: true)
+    }
 }

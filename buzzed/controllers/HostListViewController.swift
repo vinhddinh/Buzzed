@@ -53,12 +53,13 @@ class HostListViewController: UIViewController, MCSessionDelegate, MPCHandlerDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appDelegate.window?.rootViewController = HostListViewController
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         mpcHandler.setupPeerWithDisplayName(displayName: UIDevice.current.name)
         mpcHandler.setupBrowser()
         mpcHandler.browser.delegate = self
         self.present(mpcHandler.browser, animated: true, completion: nil)
-        
     }
     
     
