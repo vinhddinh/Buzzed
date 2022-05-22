@@ -8,11 +8,11 @@
  import UIKit
  import MultipeerConnectivity
  
- var mpcHandler = MPCHandler.handler
+// var mpcHandler = MPCHandler.handler
  
  class MPCHandler: NSObject {
     
-    static var handler = MPCHandler()
+    var handler = MPCHandler()
     let peerID = MCPeerID (displayName: UIDevice.current.name)
     var session: MCSession!
     var browser: MCBrowserViewController!
