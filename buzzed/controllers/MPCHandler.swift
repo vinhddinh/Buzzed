@@ -55,8 +55,18 @@ var mpcHandler = MPCHandler.handler
  extension MPCHandler: MCSessionDelegate {
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        if (state == MCSessionState.connected) {
-            print("Connected here")
+        switch(state){
+        case MCSessionState.connected:
+            print("Connected: \(peerID.displayName)")
+        
+        case MCSessionState.connecting:
+            print("Connecting: \(peerID.displayName)")
+            
+        case MCSessionState.notConnected:
+            print("Not connected: \(peerID.displayName)")
+            
+        default: print("Connection states default error.")
+            
         }
         DispatchQueue.main.async {
             self.delegate?.changed(state: state, of: peerID)
