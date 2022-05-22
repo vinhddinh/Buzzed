@@ -24,7 +24,11 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if let count = players?.count {
+            return count
+        }
+        return 1
+//        return players?.count
         //must change to number of players connected
     }
     
@@ -32,9 +36,10 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomTableViewCell
         let player = self.players?[indexPath.row]
         
-        
-        cell.deviceNameLabel?.text = "iPhone 11"
-        cell.pointsLabel?.text = String(0)
+        cell.deviceNameLabel?.text = player?.deviceName
+        if let points = player?.pointsScored {
+            cell.pointsLabel?.text = String(points)
+        }
         cell.addButton.tag = indexPath.row //TODO: point system adding
         cell.addButton.addTarget(self, action: #selector(rowWasTapped(sender:)), for: .touchUpInside)
 //        figures out what row the button was tapped in
@@ -45,7 +50,12 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
     func rowWasTapped(sender: UIButton){
         let rowIndex: Int = sender.tag
         let playerSelected = self.players?[rowIndex]
+        if let name = playerSelected?.deviceName{
+            print(name)
+        }
         playerSelected?.pointsScored += 1
+        print(playerSelected?.pointsScored)
+        self.fetchPlayers()
     }
     
     /***************
@@ -70,7 +80,7 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func testPopulateButtonPressed(_ sender: Any) {
         let newPlayer = PlayerMO(context: self.context)
-        newPlayer.deviceName = "Apple"
+        newPlayer.deviceName = "Banana"
         newPlayer.pointsScored = 0
         
         //save object
@@ -118,6 +128,23 @@ class GameHostViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     
+    //For testing purposes, this currently deletes all player data.
+    //For deployment, this should reset all points to 0
+    @IBAction func resetButtonPressed(_ sender: Any) {
+                let request = PlayerMO.fetchRequest() as NSFetchRequest<PlayerMO>
+                let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+                do{
+                    if let result = try? context.fetch(request){
+                        for player in result {
+                            context.delete(player)
+                        }
+                    }
+                    try context.save()
+                } catch {
+        
+                }
+    }
     
     /*
     // MARK: - Navigation
