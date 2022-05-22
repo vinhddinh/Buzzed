@@ -21,6 +21,15 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
         // Do any additional setup after loading the view.
     }
     
+<<<<<<< HEAD
+    @IBAction func joinButtonPressed(_ sender: Any) {
+        mpcHandler.setupPeerWithDisplayName(displayName: UIDevice.current.name)
+        mpcHandler.setupBrowser()
+        mpcHandler.browser.delegate = self
+        self.present(mpcHandler.browser, animated: true, completion: nil)
+    }
+    
+=======
     override func viewDidAppear(_ animated: Bool) {
         print("appeared!")
         setupConnectivity()
@@ -90,6 +99,7 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
     
     
     
+>>>>>>> UC-101
     /*
     // MARK: - Navigation
 
@@ -100,4 +110,37 @@ class HomeViewController: UIViewController, MCBrowserViewControllerDelegate, MCS
     }
     */
 
+}
+
+extension HomeViewController : MCBrowserViewControllerDelegate, MCSessionDelegate {
+    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        
+    }
+    
+    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        
+    }
+    
+    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+        
+    }
+    
+    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+        
+    }
+    
+    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
+        
+    }
+    
+    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
+        dismiss(animated: true) {
+            //TODO Present actual playerVC
+            self.present(GamePlayerViewController(), animated: true)
+        }
+    }
+    
+    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
+        dismiss(animated: true)
+    }
 }
