@@ -80,7 +80,6 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
             print(name)
         }
         playerSelected?.pointsScored += 1
-//        print(playerSelected?.pointsScored)
         self.fetchPlayers()
         
         // Update all clients
@@ -129,7 +128,6 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
         let newPlayer = PlayerMO(context: self.context)
         newPlayer.deviceName = name
         newPlayer.pointsScored = 0
-        print("bruuh \(players?.count)")
 
         //save object
         do{
@@ -172,25 +170,9 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
     }
     
     
-    //For testing purposes, this currently deletes all player data.
-    //For deployment, this should reset all points to 0
+    //Unlock everyone's buzzer
     @IBAction func resetButtonPressed(_ sender: Any) {
-//        let request = PlayerMO.fetchRequest() as NSFetchRequest<PlayerMO>
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//
-//        do{
-//            if let result = try? context.fetch(request){
-//                for player in result {
-//                    context.delete(player)
-//                }
-//            }
-//            try context.save()
-//        } catch {
-//
-//        }
         self.fetchPlayers()
-        // TODO: Probably delete this...
-        // Tell all players to unlock their buzzers
         if mpcHandler.session.connectedPeers.count > 0 {
             do {
                 // Broadcast message for players to lock buzzers
