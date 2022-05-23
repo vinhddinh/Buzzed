@@ -125,6 +125,19 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
     
     @IBAction func testPopulateButtonPressed(_ sender: Any) {
         self.fetchPlayers()
+        let request = PlayerMO.fetchRequest() as NSFetchRequest<PlayerMO>
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do{
+            if let result = try? context.fetch(request){
+                for player in result {
+                    context.delete(player)
+                }
+            }
+            try context.save()
+        } catch {
+            
+        }
     }
 
     func createPlayer(name: String){
