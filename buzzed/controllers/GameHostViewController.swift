@@ -13,7 +13,8 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
     override func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         print("Host received message: " + String(data: data, encoding: .utf8)!)
         if let playerName = String(data: data, encoding: .utf8) {
-            DispatchQueue.main.async { [unowned self] in
+            DispatchQueue.main.async {
+                print("I'm in")
                 if (playerName != "LOCKBUZZERS")
                 {
                     // TODO: Identify player with name playerName as having buzzed in first
@@ -166,7 +167,7 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mpcHandler.currentView? = self
+        mpcHandler.currentView = self as HandlerViewController
     }
     
     

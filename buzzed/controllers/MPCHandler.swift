@@ -14,7 +14,7 @@ var mpcHandler = MPCHandler.handler
  class MPCHandler: NSObject {
     
     static var handler = MPCHandler()
-     let gameHostVC = GameHostViewController()
+    let gameHostVC = GameHostViewController()
     let peerID = MCPeerID (displayName: UIDevice.current.name)
     var session: MCSession!
     var browser: MCBrowserViewController!
