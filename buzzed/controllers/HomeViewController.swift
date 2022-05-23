@@ -6,24 +6,51 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
-class HomeViewController: UIViewController {
 
+class HomeViewController: UIViewController, MCBrowserViewControllerDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print("\(mpcHandler.session.connectedPeers)")
 
-    /*
+    }
+    
+    @IBAction func joinButtonPressed(_ sender: Any) {
+        mpcHandler.setupBrowser()
+        mpcHandler.browser.delegate = self
+        self.present(mpcHandler.browser, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func hostButtonPressed(_ sender: Any) {
+        mpcHandler.advertiseSelf(advertise: true)
+    }
+    
+    /*** Lots of MultipeerConnectivity functions **/
+    func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
+        dismiss(animated: true, completion: nil)
+        let gameVC = self.storyboard?.instantiateViewController(withIdentifier: "GamePlayer") as! GamePlayerViewController
+        gameVC.modalPresentationStyle = .fullScreen
+        self.present(gameVC, animated: true, completion: nil)
+    }
+    
+    func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        //         Get the new view controller using segue.destination.
+        //         Pass the selected object to the new view controller.
+        if segue.destination is GamePlayerViewController {
+            _ = segue.destination as? GamePlayerViewController
+            
+        }
     }
-    */
-
 }
