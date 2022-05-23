@@ -9,7 +9,10 @@ import UIKit
 import CoreData
 import MultipeerConnectivity
 
+
 class GameHostViewController: HandlerViewController, UITableViewDelegate, UITableViewDataSource {
+    var gameTimer = Timer()
+
     override func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         print("Host received message: " + String(data: data, encoding: .utf8)!)
         if let playerName = String(data: data, encoding: .utf8) {
@@ -167,6 +170,11 @@ class GameHostViewController: HandlerViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         mpcHandler.currentView? = self
+        
+        gameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { //Timer object
+            timer in
+            self.fetchPlayers()
+        }
     }
     
     
